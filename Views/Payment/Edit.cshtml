@@ -1,0 +1,86 @@
+﻿
+@* SETELAH DARI CONTROLLER *@
+
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DB
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model Payment
+
+
+@{
+    ViewData["Title"] = "Payment";
+}
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Product</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item active">Layouts</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add New Payment</h5>
+
+                        <!-- Horizontal Form -->
+                        @* asp-action="Edit" harus edit *@
+                        <form asp-controller="Payment" asp-action="Edit" method="post">
+                            <div class="row mb-3" hidden>
+                                <label for="Id" class="col-sm-2 col-form-label">Id</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="Id" asp-for="Id" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="Supplier" class="col-sm-2 col-form-label">Order Code</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" asp-for="OrderId" asp-items="ViewBag.Order" disabled>
+                                        <option value="">-- Pilih Order Code --</option>
+                                    </select>
+                                    <input type="hidden" asp-for="OrderId" />
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="PaymentMethod" class="col-sm-2 col-form-label">Payment</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="PaymentMethod" asp-for="PaymentMethod" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="TotalAmount" class="col-sm-2 col-form-label">Total Amount</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="TotalAmount" asp-for="TotalAmount" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Status</label>
+                                <div class="col-sm-10">
+                                    <select asp-for="PaymentStatus" class="form-select" aria-label="Default select example">
+                                        <option value=0>Failed</option>
+                                        <option value=1>Pending</option>
+                                        <option value=1>Completed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Save Data</button>
+                                <a href="@Url.Action("Index","Payment")" class="btn btn-info">Cancel</a>
+                            </div>
+                        </form><!-- End Horizontal Form -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

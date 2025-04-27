@@ -1,0 +1,80 @@
+﻿@using EFENGSI_RAHMANTO_ZALUKHU.Models.DB
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model List<ProductSizeDTO>
+
+
+
+@{
+    ViewData["Title"] = "Size";
+}
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Data Tables</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Tables</li>
+                <li class="breadcrumb-item active">Data</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Datatables</h5>
+                        <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.</p>
+
+                        <a href="@Url.Action("Edit", "ProductSize")" class="btn btn-sm btn-info">Add Size</a>
+
+                        <!-- Table with stripped rows -->
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>
+                                        <b>S</b>ize
+                                    </th>
+                                    <th>Stock</th>
+                                    \
+                                    <th>Product</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var data in Model)
+                                {
+                                    <tr>
+                                        <td>@data.Id</td>
+                                        <td>@data.Size</td>
+                                        <td>@data.Stock</td>
+                                        <td>@data.ProductName</td>
+                                        <td>
+                                            <!-- Action buttons column -->
+                                            <a href="@Url.Action("Edit", "ProductSize", new { id = data.Id })" class="btn btn-sm btn-info">Update</a>
+                                            <form method="post" action="@Url.Action("Delete", "ProductSize")" style="display:inline">
+                                                <input type="hidden" name="id" value="@data.Id" />
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus Size ini?');">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <!-- End Table with stripped rows -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

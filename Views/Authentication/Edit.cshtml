@@ -1,0 +1,99 @@
+﻿
+@* SETELAH DARI CONTROLLER *@
+
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DB
+@model User
+
+
+@{
+    ViewData["Title"] = "User";
+}
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>User List</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item active">Layouts</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Edit User Register</h5>
+
+                        <!-- Horizontal Form -->
+                        @* asp-action="Edit" harus edit *@
+                        <form asp-controller="Authentication" asp-action="Edit" method="post">
+                            <div class="row mb-3" hidden>
+                                <label for="Id" class="col-sm-2 col-form-label">Id</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="Id" asp-for="Id">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="Name" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="name" asp-for="Name" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="Stock" class="col-sm-2 col-form-label">User Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="text" asp-for="Username" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="Stock" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="text" asp-for="Email" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="Stock" class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="text" value="*******" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="PhoneNumer" class="col-sm-2 col-form-label">PhoneNumber</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="text" asp-for="PhoneNumber" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="Address" class="col-sm-2 col-form-label">Address</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="text" asp-for="Address" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Status</label>
+                                <div class="col-sm-10">
+                                    <select asp-for="UserStatus" class="form-select" aria-label="Default select example">
+                                        <option value=0>Published</option>
+                                        <option value=1>Unpublished</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Save Data</button>
+                                <a href="@Url.Action("Index","Authentication")" class="btn btn-info">Cancel</a>
+                            </div>
+                        </form><!-- End Horizontal Form -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

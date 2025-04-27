@@ -1,0 +1,176 @@
+﻿
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model UserProfileDTO
+@{ 
+     Layout = null;
+} 
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - BbibbStore</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="~/assets3/Css/UserProfileStyle.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                @if (!string.IsNullOrEmpty(Model.Image))
+                {
+                    <img src="@Model.Image" alt="Profile Picture" class="profile-pic" id="profile-pic">
+                }
+                else
+                {
+                    <img src="/images/default-product.png.jpeg" alt="Profile Picture" class="profile-pic" id="profile-pic">
+                }
+                <h2>@Model.Name</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#profile" class="active"><i class="fa fa-user"></i> Profil</a></li>
+                <li><a href="/UserProfile/TopUpSaldo"><i class="fa fa-wallet"></i> Saldo</a></li>
+                <li><a href="/PaymentDetail/OrderHistory"><i class="fa fa-shopping-bag"></i> Pesanan</a></li>
+                <li><a href="#reviews"><i class="fa fa-star"></i> Review</a></li>
+                <li><a href="#favorites"><i class="fa fa-heart"></i> Favorit</a></li>
+                <a href="@Url.Action("Index", "DashboardUser")" class="btn btn-back">
+                    <i class="fas fa-arrow-left"></i> Back
+                </a>
+            </ul>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <i class="fa fa-bars mobile-menu-btn" id="mobile-menu-btn"></i>
+            <!-- Profile Section -->
+            <div class="section active" id="profile">
+                <h2><i class="fa fa-user"></i> Pengaturan Profil</h2>
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+
+                @if (TempData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["ErrorMessage"]
+                    </div>
+                }
+
+                <div class="card">
+                    <form class="profile-form" id="profile-form" asp-action="Index" asp-controller="UserProfile" method="post" enctype="multipart/form-data">
+                        <label for="Name">Nama</label>
+                        <input type="text" id="Name" asp-for="Name" required>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+
+                        <label for="Username">Username</label>
+                        <input type="text" id="Username" asp-for="Username" required>
+                        <span asp-validation-for="Username" class="text-danger"></span>
+
+                        <label for="Email">Email</label>
+                        <input type="email" id="Email" asp-for="Email" required>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+
+                        <label for="PhoneNumber">Nomor Telepon</label>
+                        <input type="tel" id="PhoneNumber" asp-for="PhoneNumber">
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+                        <label for="Address">Alamat</label>
+                        <textarea id="Address" rows="4" asp-for="Address"></textarea>
+                        <span asp-validation-for="Address" class="text-danger"></span>
+
+                        <label for="ImageFile">Foto Profil</label>
+                        <input type="file" class="form-control" id="ImageFile" name="ImageFile" accept="image/*" />
+                        <small class="text-secondary">Format: JPG, JPEG, PNG, GIF. Maks: 5MB</small>
+
+                        @if (!string.IsNullOrEmpty(Model.Image))
+                        {
+                            <div class="mt-2">
+                                <img src="@Model.Image" alt="Current Profile Image" style="max-height: 200px;" class="img-thumbnail" />
+                            </div>
+                        }
+
+                        <button type="submit" id="submitBtn">Simpan Perubahan</button>
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+  
+    <script>
+        // Sidebar navigation
+        const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
+        const sections = document.querySelectorAll('.section');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        // Toggle sidebar di mobile
+        mobileMenuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        // Preview gambar yang diupload
+        const imageFileInput = document.getElementById('ImageFile');
+        if (imageFileInput) {
+            imageFileInput.addEventListener('change', function() {
+                const profilePic = document.getElementById('profile-pic');
+                const file = this.files[0];
+
+                if (file) {
+                    // Validasi tipe file
+                    const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+                    if (!validTypes.includes(file.type)) {
+                        alert('Hanya file gambar (jpg, jpeg, png, gif) yang diizinkan.');
+                        this.value = '';
+                        return;
+                    }
+
+                    // Validasi ukuran file (max 5MB)
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('File gambar terlalu besar (maksimal 5MB).');
+                        this.value = '';
+                        return;
+                    }
+
+                    // Tampilkan preview gambar
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        profilePic.src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Fungsi untuk kembali ke halaman sebelumnya
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '/DashboardUser/Index';
+            }
+        }
+
+        // Auto-hide alert setelah 5 detik
+        document.addEventListener('DOMContentLoaded', function() {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                setTimeout(() => {
+                    alert.style.opacity = '0';
+                    setTimeout(() => {
+                        alert.style.display = 'none';
+                    }, 500);
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>

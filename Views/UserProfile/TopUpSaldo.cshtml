@@ -1,0 +1,78 @@
+﻿
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model UserSaldoDTO
+@{
+    Layout = null; 
+}
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saldo & Top Up</title>
+    <link rel="stylesheet" href="~/assets3/Css/UserSaldoStyle.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="card balance-section">
+            <h2><i class="fa fa-wallet"></i> Saldo Anda</h2>
+            <div class="balance-amount">Rp @Model.CurrentSaldo.ToString("N0")</div>
+        </div>
+
+        <div class="card topup-section">
+            <h3><i class="fa fa-money-bill-wave"></i> Top Up Saldo</h3>
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+
+            <form class="topup-form" asp-controller="UserProfile" asp-action="TopUpSaldo" method="post">
+                <div class="form-group">
+                    <label for="topup-amount">Nominal Top Up (Rp)</label>
+                    <input type="number" asp-for="Saldo"id="topup-amount" min="10000"
+                           placeholder="Masukkan nominal"  required>
+                    <span asp-validation-for="Saldo" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-topup" id="topup-btn">Top Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Format number to Rupiah
+        const formatRupiah = (number) => {
+            return 'Rp ' + number.toLocaleString('id-ID');
+        };
+
+        // Input validation
+        document.getElementById('topup-amount').addEventListener('input', function() {
+            const value = parseInt(this.value);
+            document.getElementById('topup-btn').disabled = !value || value < 10000;
+        });
+
+        // Auto-hide alert setelah 5 detik
+        document.addEventListener('DOMContentLoaded', function() {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                setTimeout(() => {
+                    alert.style.opacity = '0';
+                    setTimeout(() => {
+                        alert.style.display = 'none';
+                    }, 500);
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>

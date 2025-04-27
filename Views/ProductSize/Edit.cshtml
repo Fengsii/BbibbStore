@@ -1,0 +1,76 @@
+﻿﻿
+@* SETELAH DARI CONTROLLER *@
+
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DB
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model ProductSize
+
+
+@{
+    ViewData["Title"] = "Size";
+}
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Product</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item active">Layouts</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add New Size</h5>
+
+                        <!-- Horizontal Form -->
+                        <form asp-controller="ProductSize" asp-action="Edit" method="post">
+                            <div class="row mb-3" hidden>
+                                <label for="Id" class="col-sm-2 col-form-label">Id</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="Id" asp-for="Id">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="Product" class="col-sm-2 col-form-label">Product</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" asp-for="ProductId" asp-items="ViewBag.Product">
+                                        <option value="">-- Pilih Product --</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="Size" class="col-sm-2 col-form-label">Size</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="size" asp-for="Size">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="Stock" class="col-sm-2 col-form-label">Stock</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="text" asp-for="Stock">
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Save Data</button>
+                                <a href="@Url.Action("Index","ProductSize")" class="btn btn-info">Cancel</a>
+                            </div>
+                        </form><!-- End Horizontal Form -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->

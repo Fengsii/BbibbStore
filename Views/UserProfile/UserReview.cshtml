@@ -1,0 +1,81 @@
+﻿ <!-- Reviews Section -->
+<div class="section" id="reviews">
+    <h2><i class="fa fa-star"></i> Review Produk</h2>
+    <div class="card">
+        <form class="review-form" id="review-form">
+            <label>Pilih Produk</label>
+            <select id="review-product">
+                <option value="satin-dress">Elegan Satin Dress</option>
+                <option value="velvet-gown">Velvet Evening Gown</option>
+                <option value="silk-blouse">Silk Blouse</option>
+            </select>
+            <label>Rating</label>
+            <div class="rating" id="rating">
+                <i class="fa fa-star" data-value="1"></i>
+                <i class="fa fa-star" data-value="2"></i>
+                <i class="fa fa-star" data-value="3"></i>
+                <i class="fa fa-star" data-value="4"></i>
+                <i class="fa fa-star" data-value="5"></i>
+            </div>
+            <label>Komentar</label>
+            <textarea id="review-comment" rows="4" placeholder="Tulis ulasan Anda..."></textarea>
+            <button type="submit">Kirim Review</button>
+        </form>
+    </div>
+    <div class="card">
+        <h3>Riwayat Review</h3>
+        <div id="review-list"></div>
+    </div>
+</div>
+<script>
+        // Review form
+    const reviewForm = document.getElementById('review-form');
+    const ratingStars = document.querySelectorAll('#rating i');
+    let selectedRating = 0;
+
+    ratingStars.forEach(star => {
+        star.addEventListener('click', () => {
+            selectedRating = parseInt(star.dataset.value);
+            ratingStars.forEach(s => s.classList.remove('filled'));
+            for (let i = 0; i < selectedRating; i++) {
+                ratingStars[i].classList.add('filled');
+            }
+        });
+    });
+
+    reviewForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const product = document.getElementById('review-product').value;
+        const comment = document.getElementById('review-comment').value;
+        if (selectedRating > 0 && comment) {
+            userData.reviews.push({ product, rating: selectedRating, comment, date: new Date().toLocaleDateString() });
+            localStorage.setItem('userData', JSON.stringify(userData));
+            renderReviews();
+            reviewForm.reset();
+            ratingStars.forEach(s => s.classList.remove('filled'));
+            selectedRating = 0;
+            alert('Review berhasil dikirim!');
+        } else {
+            alert('Silakan pilih rating dan tulis komentar.');
+        }
+    });
+
+    function renderReviews() {
+        const reviewList = document.getElementById('review-list');
+        reviewList.innerHTML = '';
+        userData.reviews.forEach(review => {
+            const div = document.createElement('div');
+            div.className = 'review-item';
+            div.innerHTML = `
+                <p><strong>Produk:</strong> ${review.product.replace('-', ' ').toUpperCase()}</p>
+                <div class="rating">
+                    ${'<i class="fa fa-star filled"></i>'.repeat(review.rating)}
+                    ${'<i class="fa fa-star"></i>'.repeat(5 - review.rating)}
+                </div>
+                <p>${review.comment}</p>
+                <p><small>${review.date}</small></p>
+            `;
+            reviewList.appendChild(div);
+        });
+    }
+</script>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\EFENGSI_RAHMANTO_ZALUKHU.props" />
+</Project>

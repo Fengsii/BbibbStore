@@ -1,0 +1,331 @@
+﻿
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DB
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model List<ProductDTO>
+
+@{
+    ViewData["Title"] = "Product";
+}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Product Showcase</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item">Products</li>
+                <li class="breadcrumb-item active">Showcase</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Loading Animation -->
+                <div id="loading" class="text-center" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+                <!-- Add Product Button -->
+                <div class="text-end mb-3">
+                    <a href="@Url.Action("Edit", "Product")" class="btn btn-gradient-info btn-sm">Add Product</a>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="product-grid row " id="productGrid" style="opacity: 0; transform: translateY(20px);">
+                    @foreach (var data in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-12 fade-in-card" style="opacity: 0; transform: translateY(20px);">
+                            <div class="card product-card h-100">
+                                <!-- Product Image -->
+                                <img src="@data.Image" alt="Product Image" class="card-img-top product-image img-thumbnail"
+                                     onerror="this.onerror=null;this.src='/images/default-product.png';" />
+
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <h5 class="card-title">@data.Name</h5>
+                                    <p class="card-text description-tooltip" data-bs-toggle="tooltip" title="@data.Description">
+                                        @(data.Description.Length > 50 ? data.Description.Substring(0, 50) + "..." : data.Description)
+                                    </p>
+                                    <p class="card-text price">
+                                        <span class="current-price">Rp @string.Format("{0:N0}", data.Price)</span>
+                                        @if (data.Price > 0 && data.Price < data.Price)
+                                        {
+                                            <span class="original-price">Rp @string.Format("{0:N0}", data.Price)</span>
+                                            <span class="badge bg-danger">@(Math.Round((data.Price - data.Price) / data.Price * 100))% OFF</span>
+                                        }
+                                    </p>
+                                    <h3 class="card-title">@data.ProductStatus</h3>
+                                    <div class="rating">
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            <i class="fas fa-star @(i <= data.Price ? "text-warning" : "text-muted")"></i>
+                                        }
+                                    </div>
+                                </div>
+
+                                <!-- Card Footer -->
+                                <div class="card-footer d-flex justify-content-between">
+                                    <a href="@Url.Action("Edit", "Product", new { id = data.Id })" class="btn btn-gradient-warning btn-sm me-2">Update</a>
+                                    <button type="button" class="btn btn-gradient-danger btn-sm delete-btn" data-id="@data.Id" data-name="@data.Name">
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <!-- End Product Grid -->
+
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+<!-- Confirm Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete the product "<span id="productName"></span>"?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form id="deleteForm" method="post" action="@Url.Action("Delete", "Product")">
+                    <input type="hidden" name="id" id="productId" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional CSS and JavaScript -->
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #F2ECE8; /* Background utama */
+        color: #333;
+    }
+
+  
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: #C7B7B3; /* Header sticky */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+        .sticky-header.scrolled {
+            background-color: #C7B7B3; /* Tetap gunakan warna solid saat discroll */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+    /* Buttons with Solid Colors */
+    .btn-gradient-info {
+        background: linear-gradient(90deg, #0d6efd, #17a2b8);
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+        .btn-gradient-info:hover {
+            background: linear-gradient(90deg, #17a2b8, #0d6efd);
+        }
+
+    .btn-gradient-warning {
+        background: linear-gradient(90deg, #ffc107, #fd7e14);
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+        .btn-gradient-warning:hover {
+            background: linear-gradient(90deg, #fd7e14, #ffc107);
+        }
+
+    .btn-gradient-danger {
+        background: linear-gradient(90deg, #dc3545, #e83e8c);
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+        .btn-gradient-danger:hover {
+            background: linear-gradient(90deg, #e83e8c, #dc3545);
+        }
+
+    /* Fade-in Effect */
+    @@keyframes fadeInCard {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-in-card {
+        animation: fadeInCard 0.5s ease forwards;
+    }
+
+    /* Product Image Hover Zoom */
+    .product-image {
+        transition: transform 0.3s ease;
+        width: 100%;
+        height: 250px; /* Tinggi gambar lebih besar */
+        object-fit: cover;
+    }
+
+        .product-image:hover {
+            transform: scale(1.1); /* Efek zoom saat hover */
+        }
+
+    /* Tooltip Styling */
+    .description-tooltip {
+        cursor: pointer;
+        text-decoration: underline dotted;
+    }
+
+    /* Card Design */
+    .product-card {
+        background-color: #fff; /* Warna latar kartu */
+        border: 1px solid #ddd;
+        border-radius: 15px; /* Sudut melengkung */
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 30px; /* Jarak bawah lebih besar */
+    }
+
+        .product-card:hover {
+            transform: translateY(-10px); /* Efek terangkat saat hover */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih tebal saat hover */
+        }
+
+    /* Price and Badge Styling */
+    .current-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1D347A; /* Warna harga utama */
+    }
+
+    .original-price {
+        font-size: 14px;
+        color: #C7B7B3; /* Warna harga asli (coret) */
+        text-decoration: line-through;
+    }
+
+    .discount-badge {
+        background-color: #FF5733; /* Warna badge diskon */
+        color: white;
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        margin-left: 10px;
+    }
+
+    /* Rating Stars */
+    .rating i {
+        color: gold; /* Bintang aktif */
+        margin-right: 2px;
+    }
+
+        .rating i.text-muted {
+            color: #ddd; /* Bintang tidak aktif */
+        }
+
+    /* Responsive Design */
+    .product-grid {
+        margin-top: 20px;
+    }
+
+    .product-card {
+        margin-bottom: 20px; /* Jarak antar kartu lebih besar */
+    }
+
+    @@keyframes pulse {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.1);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* Responsive Design */
+    @@media (max-width: 768px) {
+        .product-card
+
+    {
+        margin-bottom: 20px;
+    }
+
+    }
+   
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Show loading animation
+        const loading = document.getElementById('loading');
+        const productGrid = document.getElementById('productGrid');
+
+        loading.style.display = 'block';
+        setTimeout(() => {
+            loading.style.display = 'none';
+            productGrid.style.opacity = '1';
+            productGrid.style.transform = 'translateY(0)';
+        }, 1000);
+
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        // Handle delete button click
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const productId = this.getAttribute('data-id');
+                const productName = this.getAttribute('data-name');
+                document.getElementById('productId').value = productId;
+                document.getElementById('productName').textContent = productName;
+                const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+                deleteModal.show();
+            });
+        });
+
+        // Fade-in effect for cards
+        const cards = document.querySelectorAll('.fade-in-card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    });
+
+       
+
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+

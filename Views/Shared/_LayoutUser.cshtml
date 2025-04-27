@@ -1,0 +1,278 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    @* @RenderSection("Styles", required: false); *@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BbibbStore</title>
+    <link rel="stylesheet" href="~/assets3/Css/bodyStyle.css">
+    <link rel="stylesheet" href="~/assets3/Css/footerStyle.css">
+    <link rel="stylesheet" href="~/assets3/Css/Card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">BbibbStore</a>
+                <ul class="nav-links">
+                    <li><a href="/DashboardUser/Index">Beranda</a></li>
+                    <li><a href="#">Kategori</a></li>
+                    <li><a href="#">Koleksi Baru</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+                <div class="search-cart">
+                    <div class="user-profile-dropdown">
+                        <a class="profile-icon" id="profileIcon" href="/UserProfile/Index">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="profile-dropdown" id="profileDropdown">
+                            <div class="profile-header">
+                                <div class="profile-avatar">
+                                    <img src="../assets3/images/b7.jpg" alt="User profile">
+                                </div>
+                                <div class="profile-info">
+                                    <div class="profile-name">Andi Pratama</div>
+                                    <div class="profile-email">andi@example.com</div>
+                                </div>
+                            </div>
+                            <ul class="profile-menu">
+                                <li>
+                                    <a href="#">
+                                        <span class="profile-menu-icon"><i class="fas fa-user"></i></span>
+                                        Profil Saya
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="profile-menu-icon"><i class="fas fa-shopping-bag"></i></span>
+                                        Pesanan Saya
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="profile-menu-icon"><i class="fas fa-heart"></i></span>
+                                        Wishlist
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="profile-menu-icon"><i class="fas fa-cog"></i></span>
+                                        Pengaturan
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="profile-logout">
+                                <button class="logout-button">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Keluar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="profile-icon" id="profileIcon" href="/Cart/CartItem">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="hero-content">
+                <div>
+                    <img src="../assets3/images/b7.jp" alt="">
+                </div>
+                <h1>Style Beyond Boundaries</h1>
+                <p>Discover contemporary fashion that transcends lifestyles for men and women. Redefine your wardrobe with effortless elegance.</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+            <div class="hero-images">
+                <img src="../assets3/images/b4.jpg" alt="Fashion model with sunglasses">
+                <img src="../assets3/images/b7.jpg" alt="Fabric texture">
+                <img src="../assets3/images/b2.jpg" alt="Man in stylish coat">
+                <img src="../assets3/images/b8.jpg" alt="Woman against wall">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- HERO DAN HEADER DIAMBIL -->
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <span class="filter-label">Kategori:</span>
+                    <select class="filter-select">
+                        <option>Semua Kategori</option>
+                        <option>Pria</option>
+                        <option>Wanita</option>
+                        <option>Anak-anak</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Urutkan:</span>
+                    <select class="filter-select">
+                        <option>Paling Populer</option>
+                        <option>Terbaru</option>
+                        <option>Harga: Rendah ke Tinggi</option>
+                        <option>Harga: Tinggi ke Rendah</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    @RenderBody()
+    @RenderSection("Scripts", required: false)
+    @* <section class="products-section"> *@
+    @*     <div class="container"> *@
+    @*         <div class="product-grid row" id="productGrid"> *@
+
+    @*         </div> *@
+    @*     </div> *@
+    @* </section> *@
+    <!-- End Product Grid -->
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Belanja</h4>
+                    <ul>
+                        <li><a href="#" class="footer-link">Kategori</a></li>
+                        <li><a href="#" class="footer-link">Koleksi Baru</a></li>
+                        <li><a href="#" class="footer-link">Sale</a></li>
+                        <li><a href="#" class="footer-link">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                        <li><a href="#" class="footer-link">Pengiriman & Pengembalian</a></li>
+                        <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Kontak</h4>
+                    <p><a href="mailto:support@bbibb.com">support@BbibbStore.com</a></p>
+                    <p><a href="tel:+6281234567890">+62 812 3456 7890</a></p>
+                    <p>Jl. Sudirman No. 123, Jakarta</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column newsletter">
+                    <h4>Berlangganan</h4>
+                    <p>Penawaran eksklusif & koleksi terbaru</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email Anda" required>
+                        <button type="submit">Berlangganan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <img src="https://via.placeholder.com/40x24?text=PayPal" alt="PayPal">
+                    <img src="https://via.placeholder.com/40x24?text=Visa" alt="Visa">
+                    <img src="https://via.placeholder.com/40x24?text=MasterCard" alt="MasterCard">
+                    <img src="https://via.placeholder.com/40x24?text=Amex" alt="Amex">
+                </div>
+                <p><i class="fas fa-copyright"></i> 2025 BbibbStore. All rights reserved.</p>
+                <p class="shipping-info">Gratis ongkir untuk pesanan standar di atas IDR 1,000,000</p>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script>
+        
+
+        // Function to render star ratings
+        function renderStars(rating) {
+          let starsHTML = '';
+          const fullStars = Math.floor(rating);
+          const hasHalfStar = rating % 1 !== 0;
+
+          for (let i = 0; i < fullStars; i++) {
+            starsHTML += '<i class="fas fa-star"></i>';
+          }
+
+          if (hasHalfStar) {
+            starsHTML += '<i class="fas fa-star-half-alt"></i>';
+          }
+
+          const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+          for (let i = 0; i < emptyStars; i++) {
+            starsHTML += '<i class="far fa-star"></i>';
+          }
+
+          return starsHTML;
+        }
+
+        
+        
+
+        // Initialize products
+        renderProducts();
+
+        // User Profile Dropdown Toggle
+        const profileIcon = document.getElementById('profileIcon');
+        const profileDropdown = document.getElementById('profileDropdown');
+
+        profileIcon.addEventListener('click', function() {
+          profileDropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!profileIcon.contains(event.target) && !profileDropdown.contains(event.target)) {
+            profileDropdown.classList.remove('active');
+          }
+        });
+
+        // Scroll animation for products
+        function checkProductVisibility() {
+          const productCards = document.querySelectorAll('.product-card');
+          const windowHeight = window.innerHeight;
+
+          productCards.forEach((card, index) => {
+            const cardTop = card.getBoundingClientRect().top;
+
+            if (cardTop < windowHeight - 100) {
+              setTimeout(() => {
+                card.classList.add('animated');
+              }, index * 100);
+            }
+          });
+        }
+
+        // Check on initial load
+        window.addEventListener('load', checkProductVisibility);
+
+        // Check on scroll
+        window.addEventListener('scroll', checkProductVisibility);
+
+
+    </script>
+
+    <script src="~/assets3/js/footerJs.js"></script>
+
+</body>
+
+</html>

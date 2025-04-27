@@ -1,0 +1,78 @@
+﻿@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model List<ProductDTO>
+@{
+    ViewData["Title"] = "Daftar Produk";
+}
+<style>
+    /* Tambahkan di _LayoutUser.css atau style tag */
+    .product-grid {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .product-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: all 0.3s ease;
+    }
+
+        .product-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px) !important;
+        }
+</style>
+<div class="container mt-4">
+    <!-- Debug Info -->
+    <div class="alert alert-info">
+        
+    </div>
+    <div class="product-grid row">
+        @foreach (var data in Model)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card product-card h-100" style="opacity: 1; transform: none;">
+                    <!-- Tambahkan link ke seluruh gambar produk -->
+                    <a href="@Url.Action("Detail", "Product", new { id = data.Id })">
+                        <img src="@data.Image" alt="Product Image" class="card-img-top product-image img-thumbnail"
+                             onerror="this.onerror=null;this.src='/images/default-product.png';" />
+                    </a>
+                    <div class="card-body">
+                        <!-- Tambahkan link ke judul produk -->
+                        <h5 class="card-title">
+                            <a href="@Url.Action("Detail", "Product", new { id = data.Id })" class="text-decoration-none text-dark">
+                                @data.Name
+                            </a>
+                        </h5>
+                        <p class="card-text">
+                            @(data.Description.Length > 50 ? data.Description.Substring(0, 50) + "..." : data.Description)
+                        </p>
+                        <p class="card-text price">
+                            Rp @string.Format("{0:N0}", data.Price)
+                        </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="#cart"
+                           class="btn btn-primary btn-sm me-2">Add To Cart</a>
+                        <a href="@Url.Action("Detail", "Product", new { id = data.Id })"
+                           class="btn btn-info btn-sm me-2">Detail</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inisialisasi tooltip
+        $('[data-bs-toggle="tooltip"]').tooltip();
+        // Animasi sederhana untuk product cards
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+                card.style.transition = 'all 0.5s ease';
+            }, index * 100);
+        });
+    });
+</script>
