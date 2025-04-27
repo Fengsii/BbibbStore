@@ -1,56 +1,305 @@
-﻿@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
-@model ProductDTO
+﻿@* @using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO *@
+@* @model ProductDTO *@
 
+@* @{ *@
+@*     ViewData["Title"] = "Detail Produk"; *@
+@*     Layout = null; *@
+@*     var productSizes = ViewBag.ProductSizes as List<ProductSizeDTO>; *@
+@* } *@
+
+@* <!-- Swiper CSS --> *@
+@* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> *@
+
+@* <!-- Google Fonts --> *@
+@* <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> *@
+
+@* <!-- CSS lokal untuk halaman ini --> *@
+@* <link rel="stylesheet" href="~/assets3/Css/ProductDetail.css" /> *@
+@* <body> *@
+@*     <div class="container"> *@
+@*         <div class="product-detail"> *@
+@*             <!-- Product Gallery --> *@
+@*             <div class="product-gallery"> *@
+@*                 <!-- Main Slider --> *@
+@*                 <div class="swiper main-slider"> *@
+@*                     <div class="swiper-wrapper"> *@
+@*                         <div class="swiper-slide"> *@
+@*                             <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail" *@
+@*                                  onerror="this.onerror=null;this.src='/images/default-product.png';" /> *@
+@*                         </div> *@
+@*                         <div class="swiper-slide"> *@
+@*                             <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail" *@
+@*                                  onerror="this.onerror=null;this.src='/images/default-product.png';" /> *@
+@*                         </div> *@
+@*                         <div class="swiper-slide"> *@
+@*                             <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail" *@
+@*                                  onerror="this.onerror=null;this.src='/images/default-product.png';" /> *@
+@*                         </div> *@
+@*                     </div> *@
+@*                     <div class="swiper-pagination"></div> *@
+@*                 </div> *@
+@*                 <!-- Thumbnail Slider --> *@
+@*                 <div class="swiper swiper-thumbs"> *@
+@*                     <div class="swiper-wrapper"> *@
+@*                         <div class="swiper-slide"> *@
+@*                             <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail" *@
+@*                                  onerror="this.onerror=null;this.src='/images/default-product.png';" /> *@
+@*                         </div> *@
+@*                         <div class="swiper-slide"> *@
+@*                             <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail" *@
+@*                                  onerror="this.onerror=null;this.src='/images/default-product.png';" /> *@
+@*                         </div> *@
+@*                         <div class="swiper-slide"> *@
+@*                             <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail" *@
+@*                                  onerror="this.onerror=null;this.src='/images/default-product.png';" /> *@
+@*                         </div> *@
+@*                     </div> *@
+@*                 </div> *@
+@*             </div> *@
+@*             <!-- Product Info --> *@
+@*             <div class="product-info"> *@
+@*                 <h1>@Model.Name</h1> *@
+@*                 <p class="price">Rp @Model.Price.ToString("N0")</p> *@
+@*                 <p class="description">@Model.Description</p> *@
+@*                 <div class="size-selection"> *@
+@*                     <label>Pilih Ukuran:</label> *@
+@*                     <div class="size-list" id="size-list"> *@
+@*                         @if (productSizes != null && productSizes.Any()) *@
+@*                         { *@
+@*                             @foreach (var size in productSizes) *@
+@*                             { *@
+@*                                 <div class="size-item @(size.Stock <= 0 ? "out-of-stock" : "")" data-size="@size.Size.ToLower()"> *@
+@*                                     @size.Size <span class="stock-info">Stok: @size.Stock</span> *@
+@*                                 </div> *@
+@*                             } *@
+@*                         } *@
+@*                         else *@
+@*                         { *@
+@*                             <p>Tidak ada ukuran tersedia.</p> *@
+@*                         } *@
+@*                     </div> *@
+@*                 </div> *@
+@*                 <div class="quantity"> *@
+@*                     <label for="quantityInput">Jumlah:</label> *@
+@*                     <input type="number" id="quantityInput" value="1" min="1"> *@
+@*                 </div> *@
+
+@*                 <form id="checkout-form" asp-controller="Product" asp-action="Checkout" method="post"> *@
+@*                     <input type="hidden" id="productId" name="productId" value="@Model.Id" /> *@
+@*                     <input type="hidden" id="productSizeId" name="productSizeId" value="" /> *@
+@*                     <input type="hidden" id="quantity" name="quantity" value="1" /> *@
+@*                     <button type="submit" class="checkout-btn" id="checkout-btn">Check Out</button> *@
+@*                 </form> *@
+@*                 <a href="@Url.Action("Index", "DashboardUser")" class="checkout-btn">Back</a> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@* </body> *@
+@* <!-- Swiper JS --> *@
+@* <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> *@
+@* <script> *@
+@*     // Stock data for each size *@
+@*     const stockData = { *@
+@*     @if (productSizes != null && productSizes.Any()) *@
+@*     { *@
+@*         foreach (var size in productSizes) *@
+@*         { *@
+@*             @Html.Raw($"'{size.Size.ToLower()}': {size.Stock},") *@
+@*         } *@
+@*     } *@
+@*     }; *@
+
+@*     // Product Size IDs mapping *@
+@*     const sizeIdData = { *@
+@*     @if (productSizes != null && productSizes.Any()) *@
+@*     { *@
+@*         foreach (var size in productSizes) *@
+@*         { *@
+@*             @Html.Raw($"'{size.Size.ToLower()}': {size.Id},") *@
+@*         } *@
+@*     } *@
+@*     }; *@
+
+@*     // Initialize Swiper *@
+@*     const thumbSwiper = new Swiper('.swiper-thumbs', { *@
+@*         spaceBetween: 10, *@
+@*         slidesPerView: 3, *@
+@*         watchSlidesProgress: true, *@
+@*     }); *@
+
+@*     const mainSwiper = new Swiper('.main-slider', { *@
+@*         loop: true, *@
+@*         pagination: { *@
+@*             el: '.swiper-pagination', *@
+@*             clickable: true, *@
+@*         }, *@
+@*         thumbs: { *@
+@*             swiper: thumbSwiper, *@
+@*         }, *@
+@*     }); *@
+
+@*     // Elements *@
+@*     const sizeItems = document.querySelectorAll('.size-item'); *@
+@*     const checkoutBtn = document.getElementById('checkout-btn'); *@
+@*     const quantityInput = document.getElementById('quantityInput'); *@
+@*     const hiddenQuantityInput = document.getElementById('quantity'); *@
+@*     const productSizeIdInput = document.getElementById('productSizeId'); *@
+@*     const checkoutForm = document.getElementById('checkout-form'); *@
+@*     let selectedSize = null; *@
+
+@*     // Function to update button and quantity state *@
+@*     function updateSelection(size, stock) { *@
+@*         // Update selected size *@
+@*         sizeItems.forEach(item => { *@
+@*             item.classList.remove('selected'); *@
+@*             if (item.dataset.size === size) { *@
+@*                 item.classList.add('selected'); *@
+@*             } *@
+@*         }); *@
+
+@*         // Update productSizeId hidden input *@
+@*         if (sizeIdData[size]) { *@
+@*             productSizeIdInput.value = sizeIdData[size]; *@
+@*         } *@
+
+@*         // Update button and quantity input state *@
+@*         if (stock === 0) { *@
+@*             checkoutBtn.setAttribute('disabled', 'true'); *@
+@*             quantityInput.setAttribute('disabled', 'true'); *@
+@*         } else { *@
+@*             checkoutBtn.removeAttribute('disabled'); *@
+@*             quantityInput.removeAttribute('disabled'); *@
+@*             quantityInput.max = stock; // Limit quantity to available stock *@
+@*             if (quantityInput.value > stock) { *@
+@*                 quantityInput.value = stock; *@
+@*             } *@
+@*         } *@
+@*     } *@
+
+@*     // Add click event to size items *@
+@*     sizeItems.forEach(item => { *@
+@*         item.addEventListener('click', () => { *@
+@*             const size = item.dataset.size; *@
+@*             const stock = stockData[size]; *@
+@*             if (stock > 0) { *@
+@*                 selectedSize = size; *@
+@*                 updateSelection(size, stock); *@
+@*             } else { *@
+@*                 alert(`Maaf, ukuran ${size.toUpperCase()} sedang habis.`); *@
+@*             } *@
+@*         }); *@
+@*     }); *@
+
+@*     // Initialize with first available size *@
+@*     const firstAvailableSize = Object.keys(stockData).find(size => stockData[size] > 0); *@
+@*     if (firstAvailableSize) { *@
+@*         selectedSize = firstAvailableSize; *@
+@*         updateSelection(firstAvailableSize, stockData[firstAvailableSize]); *@
+@*     } else { *@
+@*         checkoutBtn.setAttribute('disabled', 'true'); *@
+@*         quantityInput.setAttribute('disabled', 'true'); *@
+@*     } *@
+
+@*     // Update hidden quantity input when visible quantity changes *@
+@*     quantityInput.addEventListener('change', () => { *@
+@*         hiddenQuantityInput.value = quantityInput.value; *@
+@*     }); *@
+
+@*     // Checkout Form Submit *@
+@*     checkoutForm.addEventListener('submit', (e) => { *@
+@*         if (!selectedSize) { *@
+@*             e.preventDefault(); *@
+@*             alert('Silakan pilih ukuran terlebih dahulu.'); *@
+@*             return; *@
+@*         } *@
+
+@*         // Update the hidden quantity input with the current visible quantity value *@
+@*         hiddenQuantityInput.value = quantityInput.value; *@
+
+@*         const quantity = parseInt(quantityInput.value); *@
+@*         if (stockData[selectedSize] < quantity) { *@
+@*             e.preventDefault(); *@
+@*             alert(`Maaf, stok untuk ukuran ${selectedSize.toUpperCase()} tidak mencukupi.`); *@
+@*         } *@
+@*     }); *@
+
+@*     // Validate quantity input *@
+@*     quantityInput.addEventListener('input', () => { *@
+@*         if (!selectedSize) return; *@
+@*         const stock = stockData[selectedSize]; *@
+@*         if (quantityInput.value > stock) { *@
+@*             quantityInput.value = stock; *@
+@*             alert(`Jumlah maksimum untuk ukuran ${selectedSize.toUpperCase()} adalah ${stock}.`); *@
+@*         } *@
+@*         // Update hidden input *@
+@*         hiddenQuantityInput.value = quantityInput.value; *@
+@*     }); *@
+@* </script> *@
+
+
+
+
+
+
+
+
+
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model ProductDTO
 @{
     ViewData["Title"] = "Detail Produk";
     Layout = null;
     var productSizes = ViewBag.ProductSizes as List<ProductSizeDTO>;
 }
-
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- CSS lokal untuk halaman ini -->
-<link rel="stylesheet" href="~/assets3/Css/ProductDetail.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/assets3/Css/ProductDetail.css" />
+    <style>
+       
+    </style>
+</head>
 <body>
     <div class="container">
+        <a href="@Url.Action("Index", "DashboardUser")" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
         <div class="product-detail">
             <!-- Product Gallery -->
             <div class="product-gallery">
-                <!-- Main Slider -->
                 <div class="swiper main-slider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail"
+                            <img src="@Model.Image" alt="@Model.Name"
                                  onerror="this.onerror=null;this.src='/images/default-product.png';" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail"
+                            <img src="@Model.Image" alt="@Model.Name"
                                  onerror="this.onerror=null;this.src='/images/default-product.png';" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail"
+                            <img src="@Model.Image" alt="@Model.Name"
                                  onerror="this.onerror=null;this.src='/images/default-product.png';" />
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-                <!-- Thumbnail Slider -->
                 <div class="swiper swiper-thumbs">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail"
+                            <img src="@Model.Image" alt="@Model.Name"
                                  onerror="this.onerror=null;this.src='/images/default-product.png';" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail"
+                            <img src="@Model.Image" alt="@Model.Name"
                                  onerror="this.onerror=null;this.src='/images/default-product.png';" />
                         </div>
                         <div class="swiper-slide">
-                            <img src="@Model.Image" alt="@Model.Name" class="card-img-top product-image img-thumbnail"
+                            <img src="@Model.Image" alt="@Model.Name"
                                  onerror="this.onerror=null;this.src='/images/default-product.png';" />
                         </div>
                     </div>
@@ -83,155 +332,146 @@
                     <label for="quantityInput">Jumlah:</label>
                     <input type="number" id="quantityInput" value="1" min="1">
                 </div>
-
                 <form id="checkout-form" asp-controller="Product" asp-action="Checkout" method="post">
                     <input type="hidden" id="productId" name="productId" value="@Model.Id" />
                     <input type="hidden" id="productSizeId" name="productSizeId" value="" />
                     <input type="hidden" id="quantity" name="quantity" value="1" />
                     <button type="submit" class="checkout-btn" id="checkout-btn">Check Out</button>
                 </form>
-                <a href="@Url.Action("Index", "DashboardUser")" class="checkout-btn">Back</a>
             </div>
         </div>
     </div>
-</body>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    // Stock data for each size
-    const stockData = {
-    @if (productSizes != null && productSizes.Any())
-    {
-        foreach (var size in productSizes)
-        {
-            @Html.Raw($"'{size.Size.ToLower()}': {size.Stock},")
-        }
-    }
-    };
-
-    // Product Size IDs mapping
-    const sizeIdData = {
-    @if (productSizes != null && productSizes.Any())
-    {
-        foreach (var size in productSizes)
-        {
-            @Html.Raw($"'{size.Size.ToLower()}': {size.Id},")
-        }
-    }
-    };
-
-    // Initialize Swiper
-    const thumbSwiper = new Swiper('.swiper-thumbs', {
-        spaceBetween: 10,
-        slidesPerView: 3,
-        watchSlidesProgress: true,
-    });
-
-    const mainSwiper = new Swiper('.main-slider', {
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        thumbs: {
-            swiper: thumbSwiper,
-        },
-    });
-
-    // Elements
-    const sizeItems = document.querySelectorAll('.size-item');
-    const checkoutBtn = document.getElementById('checkout-btn');
-    const quantityInput = document.getElementById('quantityInput');
-    const hiddenQuantityInput = document.getElementById('quantity');
-    const productSizeIdInput = document.getElementById('productSizeId');
-    const checkoutForm = document.getElementById('checkout-form');
-    let selectedSize = null;
-
-    // Function to update button and quantity state
-    function updateSelection(size, stock) {
-        // Update selected size
-        sizeItems.forEach(item => {
-            item.classList.remove('selected');
-            if (item.dataset.size === size) {
-                item.classList.add('selected');
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Stock and size ID data
+        const stockData = {
+            @if (productSizes != null && productSizes.Any())
+            {
+                foreach (var size in productSizes)
+                {
+                    @Html.Raw($"'{size.Size.ToLower()}': {size.Stock},")
+                }
             }
+        };
+
+        const sizeIdData = {
+            @if (productSizes != null && productSizes.Any())
+            {
+                foreach (var size in productSizes)
+                {
+                    @Html.Raw($"'{size.Size.ToLower()}': {size.Id},")
+                }
+            }
+        };
+
+        // Initialize Swiper
+        const thumbSwiper = new Swiper('.swiper-thumbs', {
+            spaceBetween: 10,
+            slidesPerView: 3,
+            watchSlidesProgress: true,
         });
 
-        // Update productSizeId hidden input
-        if (sizeIdData[size]) {
-            productSizeIdInput.value = sizeIdData[size];
+        const mainSwiper = new Swiper('.main-slider', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            thumbs: {
+                swiper: thumbSwiper,
+            },
+        });
+
+        // Elements
+        const sizeItems = document.querySelectorAll('.size-item');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const quantityInput = document.getElementById('quantityInput');
+        const hiddenQuantityInput = document.getElementById('quantity');
+        const productSizeIdInput = document.getElementById('productSizeId');
+        const checkoutForm = document.getElementById('checkout-form');
+        let selectedSize = null;
+
+        // Update selection state
+        function updateSelection(size, stock) {
+            sizeItems.forEach(item => {
+                item.classList.remove('selected');
+                if (item.dataset.size === size) {
+                    item.classList.add('selected');
+                }
+            });
+
+            if (sizeIdData[size]) {
+                productSizeIdInput.value = sizeIdData[size];
+            }
+
+            if (stock === 0) {
+                checkoutBtn.setAttribute('disabled', 'true');
+                quantityInput.setAttribute('disabled', 'true');
+            } else {
+                checkoutBtn.removeAttribute('disabled');
+                quantityInput.removeAttribute('disabled');
+                quantityInput.max = stock;
+                if (quantityInput.value > stock) {
+                    quantityInput.value = stock;
+                }
+            }
         }
 
-        // Update button and quantity input state
-        if (stock === 0) {
+        // Size selection
+        sizeItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const size = item.dataset.size;
+                const stock = stockData[size];
+                if (stock > 0) {
+                    selectedSize = size;
+                    updateSelection(size, stock);
+                } else {
+                    alert(`Maaf, ukuran ${size.toUpperCase()} sedang habis.`);
+                }
+            });
+        });
+
+        // Initialize with first available size
+        const firstAvailableSize = Object.keys(stockData).find(size => stockData[size] > 0);
+        if (firstAvailableSize) {
+            selectedSize = firstAvailableSize;
+            updateSelection(firstAvailableSize, stockData[firstAvailableSize]);
+        } else {
             checkoutBtn.setAttribute('disabled', 'true');
             quantityInput.setAttribute('disabled', 'true');
-        } else {
-            checkoutBtn.removeAttribute('disabled');
-            quantityInput.removeAttribute('disabled');
-            quantityInput.max = stock; // Limit quantity to available stock
-            if (quantityInput.value > stock) {
-                quantityInput.value = stock;
-            }
         }
-    }
 
-    // Add click event to size items
-    sizeItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const size = item.dataset.size;
-            const stock = stockData[size];
-            if (stock > 0) {
-                selectedSize = size;
-                updateSelection(size, stock);
-            } else {
-                alert(`Maaf, ukuran ${size.toUpperCase()} sedang habis.`);
+        // Quantity change
+        quantityInput.addEventListener('change', () => {
+            hiddenQuantityInput.value = quantityInput.value;
+        });
+
+        // Form submission
+        checkoutForm.addEventListener('submit', (e) => {
+            if (!selectedSize) {
+                e.preventDefault();
+                alert('Silakan pilih ukuran terlebih dahulu.');
+                return;
+            }
+
+            hiddenQuantityInput.value = quantityInput.value;
+            const quantity = parseInt(quantityInput.value);
+            if (stockData[selectedSize] < quantity) {
+                e.preventDefault();
+                alert(`Maaf, stok untuk ukuran ${selectedSize.toUpperCase()} tidak mencukupi.`);
             }
         });
-    });
 
-    // Initialize with first available size
-    const firstAvailableSize = Object.keys(stockData).find(size => stockData[size] > 0);
-    if (firstAvailableSize) {
-        selectedSize = firstAvailableSize;
-        updateSelection(firstAvailableSize, stockData[firstAvailableSize]);
-    } else {
-        checkoutBtn.setAttribute('disabled', 'true');
-        quantityInput.setAttribute('disabled', 'true');
-    }
-
-    // Update hidden quantity input when visible quantity changes
-    quantityInput.addEventListener('change', () => {
-        hiddenQuantityInput.value = quantityInput.value;
-    });
-
-    // Checkout Form Submit
-    checkoutForm.addEventListener('submit', (e) => {
-        if (!selectedSize) {
-            e.preventDefault();
-            alert('Silakan pilih ukuran terlebih dahulu.');
-            return;
-        }
-
-        // Update the hidden quantity input with the current visible quantity value
-        hiddenQuantityInput.value = quantityInput.value;
-
-        const quantity = parseInt(quantityInput.value);
-        if (stockData[selectedSize] < quantity) {
-            e.preventDefault();
-            alert(`Maaf, stok untuk ukuran ${selectedSize.toUpperCase()} tidak mencukupi.`);
-        }
-    });
-
-    // Validate quantity input
-    quantityInput.addEventListener('input', () => {
-        if (!selectedSize) return;
-        const stock = stockData[selectedSize];
-        if (quantityInput.value > stock) {
-            quantityInput.value = stock;
-            alert(`Jumlah maksimum untuk ukuran ${selectedSize.toUpperCase()} adalah ${stock}.`);
-        }
-        // Update hidden input
-        hiddenQuantityInput.value = quantityInput.value;
-    });
-</script>
+        // Quantity validation
+        quantityInput.addEventListener('input', () => {
+            if (!selectedSize) return;
+            const stock = stockData[selectedSize];
+            if (quantityInput.value > stock) {
+                quantityInput.value = stock;
+                alert(`Jumlah maksimum untuk ukuran ${selectedSize.toUpperCase()} adalah ${stock}.`);
+            }
+            hiddenQuantityInput.value = quantityInput.value;
+        });
+    </script>
+</body>
+</html>

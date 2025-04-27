@@ -112,3 +112,4 @@ C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\bin\Debug\
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutAdmin.cshtml.rz.scp.css
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\EFENGSI_.35F045F5.Up2Date
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\EFENGSI_RAHMANTO_ZALUKHU.sourcelink.json

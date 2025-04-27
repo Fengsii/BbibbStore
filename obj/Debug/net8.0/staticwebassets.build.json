@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sk71ojxy+Z1Yt0m3ZDJlR7flczxXuYTpp0Yc1T6dj/4=",
+  "Hash": "8AjccE8BCl6iZdOArNPbsUSUnf0UGLcPq2GoT3YlKg4=",
   "Source": "EFENGSI_RAHMANTO_ZALUKHU",
   "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
   "Mode": "Default",
@@ -16166,6 +16166,27 @@
       "OriginalItemSpec": "wwwroot\\assets3\\Css\\OrderStyle.css"
     },
     {
+      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\assets3\\Css\\PaymentDetailStyle.css",
+      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
+      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
+      "RelativePath": "assets3/Css/PaymentDetailStyle#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k7i3u4ro9u",
+      "Integrity": "8JyrkrsL1ttiVOQTSYVDT66JesqVGkkvLGvP4B0VirY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets3\\Css\\PaymentDetailStyle.css"
+    },
+    {
       "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\assets3\\Css\\PaymentStyle.css",
       "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
       "SourceType": "Discovered",
@@ -16201,8 +16222,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fdh0udlg48",
-      "Integrity": "89mPtrExTf865lmAX93BHo4HC9T4RO2uaAY+qRKtNmc=",
+      "Fingerprint": "nb73sa2nhz",
+      "Integrity": "0yutHd3qNTYWfjKIS8LZexh2hJgJTIPVjgJU9I9/JK0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets3\\Css\\ProductDetail.css"
@@ -18728,6 +18749,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\48f2e16c-efbf-4e54-856e-3f7511512b68_b4.jpg"
     },
     {
+      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg",
+      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
+      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
+      "RelativePath": "uploads/56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w4ssb9evnv",
+      "Integrity": "cMwdKkIO9Wx/e+hqWnwJ0D9m3+jhNr/uQryyrNkNziY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\6_37fc53b1-82f5-4b4a-a0da-538988ac9f78.jpg",
       "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
       "SourceType": "Discovered",
@@ -18789,6 +18831,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\7578abe9-2799-46a6-b123-217e689ccf9f_Hodie6.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg",
+      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
+      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
+      "RelativePath": "uploads/79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4m2o9vtpzl",
+      "Integrity": "PLgREAxK/GhE8rnJ9F6GnQiC9wrvhDABJNGr/rX+GR0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg"
     },
     {
       "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\82466e60-b86f-4474-b7fc-921e1e565a05_Hodie2.jpeg",
@@ -19106,6 +19169,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\f9724e4c-80d3-4ef3-8646-f65548bba3f8_Hodie2.jpeg"
     },
     {
+      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg",
+      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
+      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
+      "RelativePath": "uploads/fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "phkzlh785e",
+      "Integrity": "gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_1_15dc09ca-14de-4e8b-9f6f-67c10504da39.jpg",
       "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
       "SourceType": "Discovered",
@@ -19316,6 +19400,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\payment-proofs\\payment_proof_18_596fdd0c-65d7-4911-a491-4710ef13dcfd.jpg"
     },
     {
+      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg",
+      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
+      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
+      "RelativePath": "uploads/payment-proofs/payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "banlk9dxvk",
+      "Integrity": "3S5X0RocPSylDHWxtwzHemdHPZ0XBjrUBCwns3dzizM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\payment-proofs\\payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg"
+    },
+    {
       "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_2_1ceb8ee0-239d-4015-95c5-ecbc0d7f1a09.jpg",
       "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
       "SourceType": "Discovered",
@@ -19356,6 +19461,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\payment-proofs\\payment_proof_2_4ecbb905-ff0a-4b4d-bf7b-ffddedb58dfb.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg",
+      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
+      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
+      "RelativePath": "uploads/payment-proofs/payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6a5br3vp6s",
+      "Integrity": "gvn24nWJDMTvEmpIFgEgHzBdkk9V4lRSv4izzh+2HiI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\payment-proofs\\payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg",
+      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
+      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
+      "RelativePath": "uploads/payment-proofs/payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z7rivvu7tm",
+      "Integrity": "T1X+EoYc5HFNUeWf++WeIz3k995cr+WiIbEIZ0OmxEQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\payment-proofs\\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg"
     },
     {
       "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_3_33f1e7b3-a4c4-4252-9856-a305a54ea9a0.jpg",
@@ -82443,6 +82590,88 @@
       ]
     },
     {
+      "Route": "assets3/Css/PaymentDetailStyle.css",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\assets3\\Css\\PaymentDetailStyle.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3782"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8JyrkrsL1ttiVOQTSYVDT66JesqVGkkvLGvP4B0VirY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:53:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8JyrkrsL1ttiVOQTSYVDT66JesqVGkkvLGvP4B0VirY="
+        }
+      ]
+    },
+    {
+      "Route": "assets3/Css/PaymentDetailStyle.k7i3u4ro9u.css",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\assets3\\Css\\PaymentDetailStyle.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3782"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8JyrkrsL1ttiVOQTSYVDT66JesqVGkkvLGvP4B0VirY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:53:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k7i3u4ro9u"
+        },
+        {
+          "Name": "label",
+          "Value": "assets3/Css/PaymentDetailStyle.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8JyrkrsL1ttiVOQTSYVDT66JesqVGkkvLGvP4B0VirY="
+        }
+      ]
+    },
+    {
       "Route": "assets3/Css/PaymentStyle.css",
       "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\assets3\\Css\\PaymentStyle.css",
       "Selectors": [],
@@ -82535,7 +82764,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4957"
+          "Value": "5139"
         },
         {
           "Name": "Content-Type",
@@ -82543,11 +82772,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"89mPtrExTf865lmAX93BHo4HC9T4RO2uaAY+qRKtNmc=\""
+          "Value": "\"0yutHd3qNTYWfjKIS8LZexh2hJgJTIPVjgJU9I9/JK0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 17:08:28 GMT"
+          "Value": "Sun, 27 Apr 2025 23:23:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -82557,12 +82786,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-89mPtrExTf865lmAX93BHo4HC9T4RO2uaAY+qRKtNmc="
+          "Value": "sha256-0yutHd3qNTYWfjKIS8LZexh2hJgJTIPVjgJU9I9/JK0="
         }
       ]
     },
     {
-      "Route": "assets3/Css/ProductDetail.fdh0udlg48.css",
+      "Route": "assets3/Css/ProductDetail.nb73sa2nhz.css",
       "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\assets3\\Css\\ProductDetail.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -82572,7 +82801,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4957"
+          "Value": "5139"
         },
         {
           "Name": "Content-Type",
@@ -82580,11 +82809,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"89mPtrExTf865lmAX93BHo4HC9T4RO2uaAY+qRKtNmc=\""
+          "Value": "\"0yutHd3qNTYWfjKIS8LZexh2hJgJTIPVjgJU9I9/JK0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 19 Apr 2025 17:08:28 GMT"
+          "Value": "Sun, 27 Apr 2025 23:23:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -82594,7 +82823,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fdh0udlg48"
+          "Value": "nb73sa2nhz"
         },
         {
           "Name": "label",
@@ -82602,7 +82831,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-89mPtrExTf865lmAX93BHo4HC9T4RO2uaAY+qRKtNmc="
+          "Value": "sha256-0yutHd3qNTYWfjKIS8LZexh2hJgJTIPVjgJU9I9/JK0="
         }
       ]
     },
@@ -82711,7 +82940,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Apr 2025 06:36:04 GMT"
+          "Value": "Sun, 27 Apr 2025 23:33:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -82756,7 +82985,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 24 Apr 2025 06:36:04 GMT"
+          "Value": "Sun, 27 Apr 2025 23:33:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92611,6 +92840,88 @@
       ]
     },
     {
+      "Route": "uploads/56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41091"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cMwdKkIO9Wx/e+hqWnwJ0D9m3+jhNr/uQryyrNkNziY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:43:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cMwdKkIO9Wx/e+hqWnwJ0D9m3+jhNr/uQryyrNkNziY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.w4ssb9evnv.jpeg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41091"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cMwdKkIO9Wx/e+hqWnwJ0D9m3+jhNr/uQryyrNkNziY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:43:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w4ssb9evnv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cMwdKkIO9Wx/e+hqWnwJ0D9m3+jhNr/uQryyrNkNziY="
+        }
+      ]
+    },
+    {
       "Route": "uploads/6_37fc53b1-82f5-4b4a-a0da-538988ac9f78.gghpu7ebmt.jpg",
       "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\6_37fc53b1-82f5-4b4a-a0da-538988ac9f78.jpg",
       "Selectors": [],
@@ -92853,6 +93164,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-R9IzbsccjEsbEfbNdVm2H8uVWH4qoHRE2bjCuCeXDdU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.4m2o9vtpzl.jpeg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33769"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PLgREAxK/GhE8rnJ9F6GnQiC9wrvhDABJNGr/rX+GR0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:42:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4m2o9vtpzl"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PLgREAxK/GhE8rnJ9F6GnQiC9wrvhDABJNGr/rX+GR0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33769"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PLgREAxK/GhE8rnJ9F6GnQiC9wrvhDABJNGr/rX+GR0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:42:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PLgREAxK/GhE8rnJ9F6GnQiC9wrvhDABJNGr/rX+GR0="
         }
       ]
     },
@@ -94087,6 +94480,88 @@
       ]
     },
     {
+      "Route": "uploads/fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39071"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:42:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.phkzlh785e.jpeg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39071"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:42:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "phkzlh785e"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY="
+        }
+      ]
+    },
+    {
       "Route": "uploads/payment-proofs/payment_proof_1_15dc09ca-14de-4e8b-9f6f-67c10504da39.9h2xok7kr7.jpg",
       "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_1_15dc09ca-14de-4e8b-9f6f-67c10504da39.jpg",
       "Selectors": [],
@@ -94907,6 +95382,88 @@
       ]
     },
     {
+      "Route": "uploads/payment-proofs/payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.banlk9dxvk.jpg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64525"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3S5X0RocPSylDHWxtwzHemdHPZ0XBjrUBCwns3dzizM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 21:51:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "banlk9dxvk"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/payment-proofs/payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3S5X0RocPSylDHWxtwzHemdHPZ0XBjrUBCwns3dzizM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/payment-proofs/payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64525"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3S5X0RocPSylDHWxtwzHemdHPZ0XBjrUBCwns3dzizM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 21:51:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3S5X0RocPSylDHWxtwzHemdHPZ0XBjrUBCwns3dzizM="
+        }
+      ]
+    },
+    {
       "Route": "uploads/payment-proofs/payment_proof_2_1ceb8ee0-239d-4015-95c5-ecbc0d7f1a09.jpg",
       "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_2_1ceb8ee0-239d-4015-95c5-ecbc0d7f1a09.jpg",
       "Selectors": [],
@@ -95067,6 +95624,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-YjXL/u2zMdWb81yQ55sl8CRi7zM2i6cQgjSBKa1ijWw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/payment-proofs/payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.6a5br3vp6s.jpg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "498188"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gvn24nWJDMTvEmpIFgEgHzBdkk9V4lRSv4izzh+2HiI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:55:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6a5br3vp6s"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/payment-proofs/payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gvn24nWJDMTvEmpIFgEgHzBdkk9V4lRSv4izzh+2HiI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/payment-proofs/payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "498188"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gvn24nWJDMTvEmpIFgEgHzBdkk9V4lRSv4izzh+2HiI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 22:55:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gvn24nWJDMTvEmpIFgEgHzBdkk9V4lRSv4izzh+2HiI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/payment-proofs/payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T1X+EoYc5HFNUeWf++WeIz3k995cr+WiIbEIZ0OmxEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 23:34:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T1X+EoYc5HFNUeWf++WeIz3k995cr+WiIbEIZ0OmxEQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/payment-proofs/payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.z7rivvu7tm.jpg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T1X+EoYc5HFNUeWf++WeIz3k995cr+WiIbEIZ0OmxEQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 27 Apr 2025 23:34:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z7rivvu7tm"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/payment-proofs/payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T1X+EoYc5HFNUeWf++WeIz3k995cr+WiIbEIZ0OmxEQ="
         }
       ]
     },

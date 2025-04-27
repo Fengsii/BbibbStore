@@ -13806,6 +13806,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\OrderStyle.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\PaymentDetailStyle.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>assets3/Css/PaymentDetailStyle.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>k7i3u4ro9u</Fingerprint>
+      <Integrity>8JyrkrsL1ttiVOQTSYVDT66JesqVGkkvLGvP4B0VirY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\PaymentDetailStyle.css'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\PaymentStyle.css'))">
       <SourceType>Package</SourceType>
       <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
@@ -13836,8 +13854,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>fdh0udlg48</Fingerprint>
-      <Integrity>89mPtrExTf865lmAX93BHo4HC9T4RO2uaAY+qRKtNmc=</Integrity>
+      <Fingerprint>nb73sa2nhz</Fingerprint>
+      <Integrity>0yutHd3qNTYWfjKIS8LZexh2hJgJTIPVjgJU9I9/JK0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\ProductDetail.css'))</OriginalItemSpec>
@@ -16020,6 +16038,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\4_7de391a1-226d-411e-9507-625cbcf8a473.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>uploads/56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w4ssb9evnv</Fingerprint>
+      <Integrity>cMwdKkIO9Wx/e+hqWnwJ0D9m3+jhNr/uQryyrNkNziY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\645e0f0f-e186-4390-ba3a-d247ccce9bc3_Baju Custom Made.jpeg'))">
       <SourceType>Package</SourceType>
       <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
@@ -16073,6 +16109,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\7578abe9-2799-46a6-b123-217e689ccf9f_Hodie6.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>uploads/79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4m2o9vtpzl</Fingerprint>
+      <Integrity>PLgREAxK/GhE8rnJ9F6GnQiC9wrvhDABJNGr/rX+GR0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\82466e60-b86f-4474-b7fc-921e1e565a05_Hodie2.jpeg'))">
       <SourceType>Package</SourceType>
@@ -16344,6 +16398,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\f9724e4c-80d3-4ef3-8646-f65548bba3f8_Hodie2.jpeg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>uploads/fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>phkzlh785e</Fingerprint>
+      <Integrity>gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_10_60387201-d4cd-4191-940b-d85b267e1171.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
@@ -16488,6 +16560,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_18_596fdd0c-65d7-4911-a491-4710ef13dcfd.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>uploads/payment-proofs/payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>banlk9dxvk</Fingerprint>
+      <Integrity>3S5X0RocPSylDHWxtwzHemdHPZ0XBjrUBCwns3dzizM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_1_15dc09ca-14de-4e8b-9f6f-67c10504da39.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
@@ -16523,6 +16613,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_1_c2d35f2b-bbed-46eb-afc2-21c22f2f3ac5.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>uploads/payment-proofs/payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6a5br3vp6s</Fingerprint>
+      <Integrity>gvn24nWJDMTvEmpIFgEgHzBdkk9V4lRSv4izzh+2HiI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>uploads/payment-proofs/payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>z7rivvu7tm</Fingerprint>
+      <Integrity>T1X+EoYc5HFNUeWf++WeIz3k995cr+WiIbEIZ0OmxEQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_2_1ceb8ee0-239d-4015-95c5-ecbc0d7f1a09.jpg'))">
       <SourceType>Package</SourceType>

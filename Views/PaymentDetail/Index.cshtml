@@ -1,25 +1,260 @@
 ﻿
+@* @using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO *@
+@* @model PaymentViewDTO *@
+
+@* @{ *@
+@*     ViewData["Title"] = "Detail Payment"; *@
+@*     Layout = null; *@
+@* } *@
+
+@* <link rel="stylesheet" href="~/assets3/Css/PaymentStyle.css" /> *@
+@* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /> *@
+
+@* <body> *@
+@*     <div class="container"> *@
+
+@*         <h1>Pembayaran Pesanan</h1> *@
+@*         <p><strong>Kode Order:</strong> @Model.OrderCode</p> *@
+
+@*         <!-- Order Summary --> *@
+@*         <div class="order-summary"> *@
+@*             <h2>Ringkasan Pesanan</h2> *@
+
+@*             @foreach (var item in Model.OrderDetails) *@
+@*             { *@
+@*                 <div class="product-item"> *@
+@*                     <img src="@item.Product.Image" alt="@item.Product.Name" *@
+@*                          onerror="this.onerror=null;this.src='/images/default-product.png';"> *@
+@*                     <div class="product-details"> *@
+@*                         <p><strong>Produk:</strong> @item.Product.Name</p> *@
+@*                         <p><strong>Ukuran:</strong> @item.SelectedSize</p> *@
+@*                         <p><strong>Jumlah:</strong> @item.Quantity</p> *@
+@*                         <p><strong>Harga:</strong> Rp @item.PriceAtPurchase.ToString("N0")</p> *@
+@*                         <p><strong>Subtotal:</strong> Rp @((item.PriceAtPurchase * item.Quantity).ToString("N0"))</p> *@
+@*                     </div> *@
+@*                 </div> *@
+@*             } *@
+
+@*             <div class="total-section"> *@
+@*                 <p class="total">Total: Rp @Model.TotalAmount.ToString("N0")</p> *@
+@*             </div> *@
+@*         </div> *@
+
+@*         <!-- Payment Methods --> *@
+@*         <div class="payment-methods"> *@
+@*             <h2>Pilih Metode Pembayaran</h2> *@
+@*             <div class="methods-container"> *@
+@*                 <div class="method-item" data-method="credit-card"> *@
+@*                     <i class="fas fa-credit-card"></i> Credit Card *@
+@*                 </div> *@
+@*                 <div class="method-item" data-method="bank-transfer"> *@
+@*                     <i class="fas fa-university"></i> Bank Transfer *@
+@*                 </div> *@
+@*                 <div class="method-item" data-method="dana"> *@
+@*                     <i class="fas fa-wallet"></i> Dana *@
+@*                 </div> *@
+@*                 <div class="method-item" data-method="cod"> *@
+@*                     <i class="fas fa-truck"></i> COD *@
+@*                 </div> *@
+@*             </div> *@
+
+@*             <!-- Bank Selection (shown only for bank transfer) --> *@
+@*             <div class="bank-selection" id="bank-selection" style="display: none;"> *@
+@*                 <label for="bank-select">Pilih Bank:</label> *@
+@*                 <select id="bank-select"> *@
+@*                     <option value="">-- Pilih Bank --</option> *@
+@*                     <option value="bri">BRI</option> *@
+@*                     <option value="bca">BCA</option> *@
+@*                     <option value="mandiri">Mandiri</option> *@
+@*                     <option value="bni">BNI</option> *@
+@*                 </select> *@
+
+@*                 <div class="bank-details" id="bank-details" style="display: none;"> *@
+@*                     <p><strong>Nomor Rekening:</strong> <span id="bank-account"></span></p> *@
+@*                     <p><strong>Atas Nama:</strong> <span id="bank-holder"></span></p> *@
+@*                 </div> *@
+@*             </div> *@
+@*         </div> *@
+
+@*         <!-- Payment Proof Upload --> *@
+@*         <div class="proof-upload" id="proof-upload"> *@
+@*             <label for="proof-input">Upload Bukti Pembayaran</label> *@
+@*             <input type="file" id="proof-input" accept="image/*"> *@
+@*             <div class="preview-container" id="preview-container" style="display: none;"> *@
+@*                 <img id="preview-img" src="" alt="Bukti Pembayaran"> *@
+@*             </div> *@
+@*         </div> *@
+
+@*         <!-- Payment Form --> *@
+@*         <form id="payment-form" asp-controller="PaymentDetail" asp-action="Confirm" method="post"> *@
+@*             <input type="hidden" name="orderId" value="@Model.OrderId" /> *@
+@*             <input type="hidden" id="payment-method" name="paymentMethod" value="" /> *@
+@*             <input type="hidden" id="selected-bank" name="selectedBank" value="" /> *@
+@*             <input type="hidden" id="proof-image" name="proofImage" value="" /> *@
+
+@*             <button type="submit" class="submit-btn" id="submit-btn" disabled>Konfirmasi Pembayaran</button> *@
+@*         </form> *@
+
+@*         <a href="@Url.Action("Index", "DashboardUser")" class="back-btn"></a> *@
+@*     </div> *@
+@*     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> *@
+@*     <script> *@
+@*         // Bank details data *@
+@*         const bankDetails = { *@
+@*             bri: { account: '1234567890', holder: 'Fengsi Rz' }, *@
+@*             bca: { account: '0987654321', holder: 'Fengsi Rz' }, *@
+@*             mandiri: { account: '1122334455', holder: 'Fengsi Rz' }, *@
+@*             bni: { account: '5566778899', holder: 'Fengsi Rz' } *@
+@*         }; *@
+
+@*         // DOM Elements *@
+@*         const methodItems = document.querySelectorAll('.method-item'); *@
+@*         const bankSelection = document.getElementById('bank-selection'); *@
+@*         const bankSelect = document.getElementById('bank-select'); *@
+@*         const bankDetailsDiv = document.getElementById('bank-details'); *@
+@*         const proofUpload = document.getElementById('proof-upload'); *@
+@*         const proofInput = document.getElementById('proof-input'); *@
+@*         const previewContainer = document.getElementById('preview-container'); *@
+@*         const previewImg = document.getElementById('preview-img'); *@
+@*         const submitBtn = document.getElementById('submit-btn'); *@
+@*         const paymentMethodInput = document.getElementById('payment-method'); *@
+@*         const selectedBankInput = document.getElementById('selected-bank'); *@
+@*         const proofImageInput = document.getElementById('proof-image'); *@
+
+@*         let selectedMethod = ''; *@
+@*         let hasUploadedProof = false; *@
+
+@*         // Method selection *@
+@*         methodItems.forEach(item => { *@
+@*             item.addEventListener('click', () => { *@
+@*                 // Remove active class from all items *@
+@*                 methodItems.forEach(i => i.classList.remove('active')); *@
+
+@*                 // Add active class to selected item *@
+@*                 item.classList.add('active'); *@
+
+@*                 // Set selected method *@
+@*                 selectedMethod = item.dataset.method; *@
+@*                 paymentMethodInput.value = selectedMethod; *@
+
+@*                 // Show/hide bank selection based on method *@
+@*                 if (selectedMethod === 'bank-transfer') { *@
+@*                     bankSelection.style.display = 'block'; *@
+@*                 } else { *@
+@*                     bankSelection.style.display = 'none'; *@
+@*                     bankDetailsDiv.style.display = 'none'; *@
+@*                 } *@
+
+@*                 // Show/hide proof upload (not needed for COD) *@
+@*                 if (selectedMethod === 'cod') { *@
+@*                     proofUpload.style.display = 'none'; *@
+@*                     hasUploadedProof = true; // COD doesn't need proof *@
+@*                 } else { *@
+@*                     proofUpload.style.display = 'block'; *@
+@*                     hasUploadedProof = false; *@
+@*                 } *@
+
+@*                 checkSubmitConditions(); *@
+@*             }); *@
+@*         }); *@
+
+@*         // Bank selection change *@
+@*         bankSelect.addEventListener('change', () => { *@
+@*             const selectedBank = bankSelect.value; *@
+@*             selectedBankInput.value = selectedBank; *@
+
+@*             if (selectedBank && bankDetails[selectedBank]) { *@
+@*                 document.getElementById('bank-account').textContent = bankDetails[selectedBank].account; *@
+@*                 document.getElementById('bank-holder').textContent = bankDetails[selectedBank].holder; *@
+@*                 bankDetailsDiv.style.display = 'block'; *@
+@*             } else { *@
+@*                 bankDetailsDiv.style.display = 'none'; *@
+@*             } *@
+
+@*             checkSubmitConditions(); *@
+@*         }); *@
+
+@*         // Proof image upload *@
+@*         proofInput.addEventListener('change', function(e) { *@
+@*             const file = e.target.files[0]; *@
+@*             if (file) { *@
+@*                 const reader = new FileReader(); *@
+@*                 reader.onload = function(event) { *@
+@*                     previewImg.src = event.target.result; *@
+@*                     previewContainer.style.display = 'block'; *@
+@*                     proofImageInput.value = event.target.result; // Set base64 image *@
+@*                     hasUploadedProof = true; *@
+@*                     checkSubmitConditions(); *@
+@*                 }; *@
+@*                 reader.readAsDataURL(file); *@
+@*             } *@
+@*         }); *@
+
+@*         // Check if submit button should be enabled *@
+@*                 // Tambahkan di script *@
+@*         function checkSubmitConditions() { *@
+@*             let canSubmit = false; *@
+@*             const totalAmount = @Model.TotalAmount; *@
+@*             const userSaldo = @Model.saldo; *@
+
+@*             if (selectedMethod) { *@
+@*                 // Validasi saldo *@
+@*                 if (userSaldo < totalAmount) { *@
+@*                     alert('Saldo Anda tidak mencukupiiiiiiiiii!' + userSaldo); *@
+@*                     submitBtn.disabled = true; *@
+@*                     return; *@
+@*                 } *@
+
+@*                 // Validasi berdasarkan metode *@
+@*                 if (selectedMethod === 'bank-transfer') { *@
+@*                     canSubmit = bankSelect.value && hasUploadedProof; *@
+@*                 } *@
+@*                 else if (selectedMethod === 'cod') { *@
+@*                     canSubmit = true; *@
+@*                 } *@
+@*                 else { *@
+@*                     canSubmit = hasUploadedProof; *@
+@*                 } *@
+@*             } *@
+
+@*             submitBtn.disabled = !canSubmit; *@
+@*         } *@
+@*     </script> *@
+@* </body> *@
+
+
+
+
+
 @using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
 @model PaymentViewDTO
-
 @{
     ViewData["Title"] = "Detail Payment";
     Layout = null;
 }
-
-<link rel="stylesheet" href="~/assets3/Css/PaymentStyle.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/assets3/Css/PaymentDetailStyle.css" />
+    <style>
+       
+    </style>
+</head>
 <body>
     <div class="container">
-
         <h1>Pembayaran Pesanan</h1>
-        <p><strong>Kode Order:</strong> @Model.OrderCode</p>
+        <p class="order-code"><strong>Kode Order:</strong> @Model.OrderCode</p>
+
+        <!-- Back Button -->
+        <a href="@Url.Action("Index", "DashboardUser")" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali</a>
 
         <!-- Order Summary -->
         <div class="order-summary">
             <h2>Ringkasan Pesanan</h2>
-
             @foreach (var item in Model.OrderDetails)
             {
                 <div class="product-item">
@@ -34,7 +269,6 @@
                     </div>
                 </div>
             }
-
             <div class="total-section">
                 <p class="total">Total: Rp @Model.TotalAmount.ToString("N0")</p>
             </div>
@@ -45,10 +279,10 @@
             <h2>Pilih Metode Pembayaran</h2>
             <div class="methods-container">
                 <div class="method-item" data-method="credit-card">
-                    <i class="fas fa-credit-card"></i> Credit Card
+                    <i class="fas fa-credit-card"></i> Kartu Kredit
                 </div>
                 <div class="method-item" data-method="bank-transfer">
-                    <i class="fas fa-university"></i> Bank Transfer
+                    <i class="fas fa-university"></i> Transfer Bank
                 </div>
                 <div class="method-item" data-method="dana">
                     <i class="fas fa-wallet"></i> Dana
@@ -58,7 +292,7 @@
                 </div>
             </div>
 
-            <!-- Bank Selection (shown only for bank transfer) -->
+            <!-- Bank Selection -->
             <div class="bank-selection" id="bank-selection" style="display: none;">
                 <label for="bank-select">Pilih Bank:</label>
                 <select id="bank-select">
@@ -68,7 +302,6 @@
                     <option value="mandiri">Mandiri</option>
                     <option value="bni">BNI</option>
                 </select>
-
                 <div class="bank-details" id="bank-details" style="display: none;">
                     <p><strong>Nomor Rekening:</strong> <span id="bank-account"></span></p>
                     <p><strong>Atas Nama:</strong> <span id="bank-holder"></span></p>
@@ -91,13 +324,9 @@
             <input type="hidden" id="payment-method" name="paymentMethod" value="" />
             <input type="hidden" id="selected-bank" name="selectedBank" value="" />
             <input type="hidden" id="proof-image" name="proofImage" value="" />
-
             <button type="submit" class="submit-btn" id="submit-btn" disabled>Konfirmasi Pembayaran</button>
         </form>
-
-        <a href="@Url.Action("Index", "DashboardUser")" class="back-btn"></a>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         // Bank details data
         const bankDetails = {
@@ -127,17 +356,11 @@
         // Method selection
         methodItems.forEach(item => {
             item.addEventListener('click', () => {
-                // Remove active class from all items
                 methodItems.forEach(i => i.classList.remove('active'));
-
-                // Add active class to selected item
                 item.classList.add('active');
-
-                // Set selected method
                 selectedMethod = item.dataset.method;
                 paymentMethodInput.value = selectedMethod;
 
-                // Show/hide bank selection based on method
                 if (selectedMethod === 'bank-transfer') {
                     bankSelection.style.display = 'block';
                 } else {
@@ -145,10 +368,9 @@
                     bankDetailsDiv.style.display = 'none';
                 }
 
-                // Show/hide proof upload (not needed for COD)
                 if (selectedMethod === 'cod') {
                     proofUpload.style.display = 'none';
-                    hasUploadedProof = true; // COD doesn't need proof
+                    hasUploadedProof = true;
                 } else {
                     proofUpload.style.display = 'block';
                     hasUploadedProof = false;
@@ -175,14 +397,14 @@
         });
 
         // Proof image upload
-        proofInput.addEventListener('change', function(e) {
+        proofInput.addEventListener('change', function (e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(event) {
+                reader.onload = function (event) {
                     previewImg.src = event.target.result;
                     previewContainer.style.display = 'block';
-                    proofImageInput.value = event.target.result; // Set base64 image
+                    proofImageInput.value = event.target.result;
                     hasUploadedProof = true;
                     checkSubmitConditions();
                 };
@@ -190,29 +412,24 @@
             }
         });
 
-        // Check if submit button should be enabled
-                // Tambahkan di script
+        // Check submit conditions
         function checkSubmitConditions() {
             let canSubmit = false;
             const totalAmount = @Model.TotalAmount;
             const userSaldo = @Model.saldo;
 
             if (selectedMethod) {
-                // Validasi saldo
                 if (userSaldo < totalAmount) {
-                    alert('Saldo Anda tidak mencukupiiiiiiiiii!' + userSaldo);
+                    alert('Saldo Anda tidak mencukupi! Saldo saat ini: Rp ' + userSaldo.toLocaleString());
                     submitBtn.disabled = true;
                     return;
                 }
 
-                // Validasi berdasarkan metode
                 if (selectedMethod === 'bank-transfer') {
                     canSubmit = bankSelect.value && hasUploadedProof;
-                }
-                else if (selectedMethod === 'cod') {
+                } else if (selectedMethod === 'cod') {
                     canSubmit = true;
-                }
-                else {
+                } else {
                     canSubmit = hasUploadedProof;
                 }
             }
@@ -221,3 +438,4 @@
         }
     </script>
 </body>
+</html>

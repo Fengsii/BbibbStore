@@ -765,6 +765,7 @@ wwwroot\assets3\Css\headerStyle.css
 wwwroot\assets3\Css\ListProdcutHome.css
 wwwroot\assets3\Css\OrderHistoryStyle.css
 wwwroot\assets3\Css\OrderStyle.css
+wwwroot\assets3\Css\PaymentDetailStyle.css
 wwwroot\assets3\Css\PaymentStyle.css
 wwwroot\assets3\Css\ProductDetail.css
 wwwroot\assets3\Css\UserProfileStyle.css
@@ -887,9 +888,11 @@ wwwroot\uploads\4465227b-cc58-4ae9-a40e-dc1f570e3e26_Hodie3.jpeg
 wwwroot\uploads\45a97ab8-6c26-4d9a-8857-4a5032b50336_Kemeja3.jpeg
 wwwroot\uploads\4631132b-d8b8-4f2f-9d47-50ecb2609da9_WIN_20241009_00_05_18_Pro.jpg
 wwwroot\uploads\48f2e16c-efbf-4e54-856e-3f7511512b68_b4.jpg
+wwwroot\uploads\56095906-f25d-4773-a0d6-be7cc3a561c2_Kemeja12.jpeg
 wwwroot\uploads\6_37fc53b1-82f5-4b4a-a0da-538988ac9f78.jpg
 wwwroot\uploads\645e0f0f-e186-4390-ba3a-d247ccce9bc3_Baju Custom Made.jpeg
 wwwroot\uploads\7578abe9-2799-46a6-b123-217e689ccf9f_Hodie6.jpeg
+wwwroot\uploads\79f26b12-f398-41d1-b5a6-3381ba361d12_Amarelo Cordão Simples Casual Suéter.jpeg
 wwwroot\uploads\82466e60-b86f-4474-b7fc-921e1e565a05_Hodie2.jpeg
 wwwroot\uploads\8721e1fe-fe27-4734-a38b-31f16ebc128a_1.png
 wwwroot\uploads\8e8b500c-7d24-4068-abb1-172d75a2faf4_Baju Custom Made.jpeg
@@ -905,6 +908,7 @@ wwwroot\uploads\ef10b489-a1b4-4795-b69a-add18becc6bd_Baju Custom Made.jpeg
 wwwroot\uploads\f06964ef-53ef-4d28-9716-95353d28ee64_b5.jpg
 wwwroot\uploads\f6444c91-f978-45ba-a162-5c9cbeec9c62_1.png
 wwwroot\uploads\f9724e4c-80d3-4ef3-8646-f65548bba3f8_Hodie2.jpeg
+wwwroot\uploads\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg
 wwwroot\uploads\payment-proofs\payment_proof_1_15dc09ca-14de-4e8b-9f6f-67c10504da39.jpg
 wwwroot\uploads\payment-proofs\payment_proof_1_c2d35f2b-bbed-46eb-afc2-21c22f2f3ac5.jpg
 wwwroot\uploads\payment-proofs\payment_proof_10_60387201-d4cd-4191-940b-d85b267e1171.jpg
@@ -915,8 +919,11 @@ wwwroot\uploads\payment-proofs\payment_proof_13_a5375fd1-58e2-4c39-8c54-50a8a4a6
 wwwroot\uploads\payment-proofs\payment_proof_14_850b7d8e-8f01-4c75-a87f-76344cffb90e.jpg
 wwwroot\uploads\payment-proofs\payment_proof_17_8cd79ddb-3b0c-4cca-97fc-fdb228709ceb.jpg
 wwwroot\uploads\payment-proofs\payment_proof_18_596fdd0c-65d7-4911-a491-4710ef13dcfd.jpg
+wwwroot\uploads\payment-proofs\payment_proof_19_892fefd2-d39d-4383-9dce-2ff538d7ee24.jpg
 wwwroot\uploads\payment-proofs\payment_proof_2_1ceb8ee0-239d-4015-95c5-ecbc0d7f1a09.jpg
 wwwroot\uploads\payment-proofs\payment_proof_2_4ecbb905-ff0a-4b4d-bf7b-ffddedb58dfb.jpg
+wwwroot\uploads\payment-proofs\payment_proof_21_2da6b2cc-c967-4e93-924d-1f9b25927106.jpg
+wwwroot\uploads\payment-proofs\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg
 wwwroot\uploads\payment-proofs\payment_proof_3_33f1e7b3-a4c4-4252-9856-a305a54ea9a0.jpg
 wwwroot\uploads\payment-proofs\payment_proof_4_ed3dc462-cbe4-4b6c-83bb-1e0a30c84947.jpg
 wwwroot\uploads\payment-proofs\payment_proof_5_572314e0-b9f5-4e18-95c5-c6e10933e36c.jpg

@@ -4,75 +4,168 @@
     ViewData["Title"] = "Daftar Produk";
 }
 <style>
-    /* Tambahkan di _LayoutUser.css atau style tag */
     .product-grid {
-        opacity: 1 !important;
-        transform: none !important;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
     }
 
     .product-card {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: all 0.3s ease;
+        width: 280px; /* Fixed width within 250-300px range */
+        background: #fff;
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: translateY(20px);
     }
 
         .product-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateY(-5px) !important;
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
+
+    .product-image {
+        width: 100%;
+        height: 200px; /* Default height, adjustable based on image */
+        object-fit: cover; /* Ensures image fills space without distortion */
+        border-bottom: 1px solid #f1f1f1;
+        border-radius: 12px 12px 0 0;
+        display: block;
+    }
+
+    .card-body {
+        padding: 15px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+
+        .card-title a {
+            color: #333;
+            text-decoration: none;
+        }
+
+            .card-title a:hover {
+                color: #007bff;
+            }
+
+    .card-text {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 10px;
+        line-height: 1.4;
+        flex-grow: 1;
+    }
+
+    .price {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #e44d26;
+    }
+
+    .card-footer {
+        padding: 10px 15px;
+        background: #f8f9fa;
+        border-top: 1px solid #f1f1f1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border: none;
+    }
+
+        .btn-info:hover {
+            background-color: #117a8b;
+        }
+
+    /* Ensure image drives card height dynamically */
+    .product-card img-loaded {
+        height: auto;
+    }
 </style>
 <div class="container mt-4">
-    <!-- Debug Info -->
-    <div class="alert alert-info">
-        
-    </div>
-    <div class="product-grid row">
+    <div class="product-grid">
         @foreach (var data in Model)
         {
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                <div class="card product-card h-100" style="opacity: 1; transform: none;">
-                    <!-- Tambahkan link ke seluruh gambar produk -->
-                    <a href="@Url.Action("Detail", "Product", new { id = data.Id })">
-                        <img src="@data.Image" alt="Product Image" class="card-img-top product-image img-thumbnail"
-                             onerror="this.onerror=null;this.src='/images/default-product.png';" />
-                    </a>
-                    <div class="card-body">
-                        <!-- Tambahkan link ke judul produk -->
-                        <h5 class="card-title">
-                            <a href="@Url.Action("Detail", "Product", new { id = data.Id })" class="text-decoration-none text-dark">
-                                @data.Name
-                            </a>
-                        </h5>
-                        <p class="card-text">
-                            @(data.Description.Length > 50 ? data.Description.Substring(0, 50) + "..." : data.Description)
-                        </p>
-                        <p class="card-text price">
-                            Rp @string.Format("{0:N0}", data.Price)
-                        </p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between">
-                        <a href="#cart"
-                           class="btn btn-primary btn-sm me-2">Add To Cart</a>
-                        <a href="@Url.Action("Detail", "Product", new { id = data.Id })"
-                           class="btn btn-info btn-sm me-2">Detail</a>
-                    </div>
+            <div class="product-card">
+                <a href="@Url.Action("Detail", "Product", new { id = data.Id })">
+                    <img src="@data.Image" alt="Product Image" class="product-image"
+                         onerror="this.onerror=null;this.src='/images/default-product.png';"
+                         onload="this.parentElement.parentElement.classList.add('img-loaded');" />
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="@Url.Action("Detail", "Product", new { id = data.Id })">
+                            @data.Name
+                        </a>
+                    </h5>
+                    <p class="card-text">
+                        @(data.Description.Length > 50 ? data.Description.Substring(0, 50) + "..." : data.Description)
+                    </p>
+                    <p class="card-text price">
+                        Rp @string.Format("{0:N0}", data.Price)
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="#cart" class="btn btn-primary">Add To Cart</a>
+                    <a href="@Url.Action("Detail", "Product", new { id = data.Id })" class="btn btn-info">Detail</a>
                 </div>
             </div>
         }
     </div>
 </div>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Inisialisasi tooltip
+    document.addEventListener('DOMContentLoaded', function () {
         $('[data-bs-toggle="tooltip"]').tooltip();
-        // Animasi sederhana untuk product cards
         const productCards = document.querySelectorAll('.product-card');
         productCards.forEach((card, index) => {
             setTimeout(() => {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
-                card.style.transition = 'all 0.5s ease';
-            }, index * 100);
+            }, index * 150);
+        });
+
+        // Adjust card height based on image
+        const images = document.querySelectorAll('.product-image');
+        images.forEach(img => {
+            img.addEventListener('load', function () {
+                const card = this.parentElement.parentElement;
+                const imgHeight = this.naturalHeight * (280 / this.naturalWidth); // Maintain aspect ratio
+                this.style.height = `${Math.min(imgHeight, 250)}px`; // Cap image height at 250px
+                card.style.height = 'auto'; // Let card height adjust naturally
+            });
         });
     });
 </script>
