@@ -11,21 +11,20 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
             _httpContextAccessor = httpContextAccessor;
         }
 
-        // Method untuk mendapatkan layout berdasarkan peran pengguna
         public string GetLayout()
         {
             var user = _httpContextAccessor.HttpContext.User;
 
             if (user.IsInRole("Admin"))
             {
-                return "~/Views/Shared/_LayoutAdmin.cshtml"; // Layout untuk Admin
+                return "~/Views/Shared/_LayoutAdmin.cshtml"; 
             }
             else if (user.IsInRole("User"))
             {
-                return "~/Views/Shared/_LayoutUser.cshtml"; // Layout untuk User
+                return "~/Views/Shared/_LayoutUser.cshtml";
             }
 
-            return "~/Views/Shared/_Layout.cshtml"; // Default layout jika tidak ada peran
+            return "~/Views/Shared/_Layout.cshtml"; 
         }
     }
 }

@@ -881,6 +881,7 @@ wwwroot\uploads\125b781f-3e1f-442c-99a9-54f8bea1c9a5_Baju Custom Made.jpeg
 wwwroot\uploads\1bd15b3b-31ad-47b4-94f3-403ea59c11c5_Kemeja13.jpeg
 wwwroot\uploads\2_388f532d-9431-45ac-ade3-89e0a272532b.png
 wwwroot\uploads\2_88917a12-b0f2-4be6-9589-044b67b96109.jpg
+wwwroot\uploads\20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16.jpeg
 wwwroot\uploads\258300da-b3f2-4e84-b7b2-b660a5d38083_b1.jpg
 wwwroot\uploads\2e078c48-502e-4a03-96d3-ace5a4703b2d_Hodie3.jpeg
 wwwroot\uploads\3_523e33e3-4f50-4857-9cb0-b55ffeed6755.jpg
@@ -902,6 +903,7 @@ wwwroot\uploads\8fa7549e-6ee6-46f8-99ae-27c008a89e6a_Kemeja17.jpeg
 wwwroot\uploads\9261e01a-b489-4b68-a314-33ab2f3d3660_Kemeja2.jpeg
 wwwroot\uploads\94f0515d-85fa-4873-9104-09d8f5a649e2_b5.jpg
 wwwroot\uploads\ad2bd529-3849-47f6-b3c0-e679b6ea4996_Baju Custom Made.jpeg
+wwwroot\uploads\b65db294-8778-41f5-aedf-b1dc7ad3217c_b8.jpg
 wwwroot\uploads\ba90e180-6b19-4b4c-ac60-506ae7f6778b_C# Struktur ASP.Net Core.png
 wwwroot\uploads\bb1ead26-0c4c-41f6-b770-3801fa68369c_Hodie7.jpeg
 wwwroot\uploads\e9bc2f08-af36-4f3b-83b3-2f13dc492d32_alwan2.jpg
@@ -910,7 +912,6 @@ wwwroot\uploads\ef10b489-a1b4-4795-b69a-add18becc6bd_Baju Custom Made.jpeg
 wwwroot\uploads\f06964ef-53ef-4d28-9716-95353d28ee64_b5.jpg
 wwwroot\uploads\f6444c91-f978-45ba-a162-5c9cbeec9c62_1.png
 wwwroot\uploads\f9724e4c-80d3-4ef3-8646-f65548bba3f8_Hodie2.jpeg
-wwwroot\uploads\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg
 wwwroot\uploads\payment-proofs\payment_proof_1_15dc09ca-14de-4e8b-9f6f-67c10504da39.jpg
 wwwroot\uploads\payment-proofs\payment_proof_1_c2d35f2b-bbed-46eb-afc2-21c22f2f3ac5.jpg
 wwwroot\uploads\payment-proofs\payment_proof_10_60387201-d4cd-4191-940b-d85b267e1171.jpg

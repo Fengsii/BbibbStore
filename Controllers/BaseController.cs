@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
 {
-    //[Authorize] // Controller dasar memerlukan autentikasi secara default
+    
     public class BaseController : Controller
     {
         //protected bool IsUserLoggedIn()

@@ -167,8 +167,8 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
             {
                 Id = userSaldo.Id,
                 UserId = userLoginId,
-                Saldo = 0, // Initial amount to add will be empty
-                CurrentSaldo = userSaldo.Saldo // Pass current balance to view
+                Saldo = 0,
+                CurrentSaldo = userSaldo.Saldo 
             };
 
             return View(saldoDTO);

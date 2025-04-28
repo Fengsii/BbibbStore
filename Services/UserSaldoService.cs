@@ -86,53 +86,5 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
         }
 
 
-        // ===================== SALDO SERVICE =====================
-        //public UserSaldo GetUsersSaldoById(int userId)
-        //{
-        //    var data = _context.UserSaldos.FirstOrDefault(s => s.UserId == userId);
-        //    if (data == null)
-        //    {
-        //        return new UserSaldo();
-        //    }
-        //    return data;
-        //}
-
-        //public bool AddUsersSaldo(UserSaldoDTO userSaldoDTO)
-        //{
-        //    try
-        //    {
-        //        var existingSaldo = _context.UserSaldos.FirstOrDefault(s => s.UserId == userSaldoDTO.UserId);
-
-        //        if (existingSaldo == null)
-        //        {
-        //            // Create new record if no saldo exists for this user
-        //            var newSaldo = new UserSaldo
-        //            {
-        //                UserId = userSaldoDTO.UserId,
-        //                Saldo = userSaldoDTO.Saldo,
-        //                LastUpdated = DateTime.Now
-        //            };
-
-        //            _context.UserSaldos.Add(newSaldo);
-        //        }
-        //        else
-        //        {
-        //            // Update existing record
-        //            existingSaldo.Saldo += userSaldoDTO.Saldo;
-        //            existingSaldo.LastUpdated = DateTime.Now;
-        //            _context.UserSaldos.Update(existingSaldo);
-        //        }
-
-        //        _context.SaveChanges();
-        //        return true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
-
-
-
     }
 }

@@ -71,7 +71,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
             {
                 var user = await _context.Users.FindAsync(userId);
 
-                // Membuat klaim untuk autentikasi
+                
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.Name),
@@ -88,9 +88,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
 
                 if (loginDTO.RememberMe)
                 {
-                    // Jika checkbox "Ingat Saya" dicentang:
-                    // 1. Set IsPersistent = true agar cookie disimpan setelah browser ditutup
-                    // 2. Set masa berlaku yang lebih lama (misalnya 7 hari)
+                  
                     authProperties.IsPersistent = true;
                     authProperties.ExpiresUtc = DateTimeOffset.UtcNow.AddDays(7);
 
@@ -98,29 +96,26 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
                 }
                 else
                 {
-                    // Jika checkbox "Ingat Saya" tidak dicentang:
-                    // 1. Set IsPersistent = false (cookie hanya bertahan selama sesi browser)
-                    // 2. Set masa berlaku yang lebih pendek (misalnya 30 menit)
+                   
                     authProperties.IsPersistent = false;
                     authProperties.ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(1);
 
                     Console.WriteLine("Remember Me tidak diaktifkan. Cookie akan bertahan selama sesi browser.");
                 }
 
-                // Login pengguna
-                // Proses login dengan properti yang sudah dikonfigurasi
+               
                 await HttpContext.SignInAsync(
                     CookieAuthenticationDefaults.AuthenticationScheme,
                     principal,
                     authProperties
                 );
 
-                // Menyimpan UserId dan informasi lain dalam session
+            
                 HttpContext.Session.SetInt32("UserId", user.Id);
                 HttpContext.Session.SetString("UserRole", user.Role);
                 HttpContext.Session.SetString("UserName", user.Name);
 
-                // Redirect berdasarkan peran
+              
                 if (role == "Admin")
                 {
                     return RedirectToAction("Index", "DashboardAdmin");
@@ -137,10 +132,10 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            // Menghapus cookie autentikasi
+           
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            // Menghapus data session
+           
             HttpContext.Session.Clear();
 
             return RedirectToAction("Login", "Authentication");

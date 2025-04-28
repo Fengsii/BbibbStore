@@ -1,21 +1,19 @@
-﻿
-@using EFENGSI_RAHMANTO_ZALUKHU.Models.DB
+﻿@using EFENGSI_RAHMANTO_ZALUKHU.Models.DB
 @using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
 @model List<ProductDTO>
 
 @{
-    ViewData["Title"] = "Product";
+    ViewData["Title"] = "Product Management";
 }
 
 <main id="main" class="main">
-
     <div class="pagetitle">
-        <h1>Product Showcase</h1>
+        <h1>Product Management</h1>
         <nav>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item">Products</li>
-                <li class="breadcrumb-item active">Showcase</li>
+                <li class="breadcrumb-item"><a href="/DashboardAdmin/Index">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Product/Index">Products</a></li>
+                <li class="breadcrumb-item active">List</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
@@ -23,7 +21,6 @@
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
-
                 <!-- Loading Animation -->
                 <div id="loading" class="text-center" style="display: none;">
                     <div class="spinner-border text-primary" role="status">
@@ -33,17 +30,17 @@
 
                 <!-- Add Product Button -->
                 <div class="text-end mb-3">
-                    <a href="@Url.Action("Edit", "Product")" class="btn btn-gradient-info btn-sm">Add Product</a>
+                    <a href="@Url.Action("Edit", "Product")" class="btn btn-create"><i class="bi bi-plus-circle"></i> Add Product</a>
                 </div>
 
                 <!-- Product Grid -->
-                <div class="product-grid row " id="productGrid" style="opacity: 0; transform: translateY(20px);">
+                <div class="product-grid row" id="productGrid">
                     @foreach (var data in Model)
                     {
-                        <div class="col-lg-4 col-md-6 col-sm-12 fade-in-card" style="opacity: 0; transform: translateY(20px);">
+                        <div class="col-lg-4 col-md-6 col-12 fade-in-card">
                             <div class="card product-card h-100">
                                 <!-- Product Image -->
-                                <img src="@data.Image" alt="Product Image" class="card-img-top product-image img-thumbnail"
+                                <img src="@data.Image" alt="@data.Name" class="card-img-top product-image img-thumbnail"
                                      onerror="this.onerror=null;this.src='/images/default-product.png';" />
 
                                 <!-- Card Body -->
@@ -52,40 +49,29 @@
                                     <p class="card-text description-tooltip" data-bs-toggle="tooltip" title="@data.Description">
                                         @(data.Description.Length > 50 ? data.Description.Substring(0, 50) + "..." : data.Description)
                                     </p>
-                                    <p class="card-text price">
-                                        <span class="current-price">Rp @string.Format("{0:N0}", data.Price)</span>
-                                        @if (data.Price > 0 && data.Price < data.Price)
-                                        {
-                                            <span class="original-price">Rp @string.Format("{0:N0}", data.Price)</span>
-                                            <span class="badge bg-danger">@(Math.Round((data.Price - data.Price) / data.Price * 100))% OFF</span>
-                                        }
-                                    </p>
-                                    <h3 class="card-title">@data.ProductStatus</h3>
-                                    <div class="rating">
-                                        @for (int i = 1; i <= 5; i++)
-                                        {
-                                            <i class="fas fa-star @(i <= data.Price ? "text-warning" : "text-muted")"></i>
-                                        }
-                                    </div>
+                                    <p class="card-text price price-format">@data.Price</p>
+                                    <span>
+                                        @data.ProductStatus
+                                    </span>
+                                    
                                 </div>
 
                                 <!-- Card Footer -->
                                 <div class="card-footer d-flex justify-content-between">
-                                    <a href="@Url.Action("Edit", "Product", new { id = data.Id })" class="btn btn-gradient-warning btn-sm me-2">Update</a>
-                                    <button type="button" class="btn btn-gradient-danger btn-sm delete-btn" data-id="@data.Id" data-name="@data.Name">
-                                        Delete
-                                    </button>
+                                    <a href="@Url.Action("Edit", "Product", new { id = data.Id })" class="btn btn-sm btn-update"><i class="bi bi-pencil"></i> Update</a>
+                                    <form method="post" action="@Url.Action("Delete", "Product")" style="display:inline">
+
+                                        <input type="hidden" name="id" value="@data.Id" />
+                                        <button type="submit" class="btn btn-sm btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus Product ini?');"><i class="bi bi-trash"></i> Delete</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     }
                 </div>
-                <!-- End Product Grid -->
-
             </div>
         </div>
     </section>
-
 </main><!-- End #main -->
 <!-- Confirm Delete Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -101,6 +87,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 <form id="deleteForm" method="post" action="@Url.Action("Delete", "Product")">
+                    @Html.AntiForgeryToken()
                     <input type="hidden" name="id" id="productId" />
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
@@ -109,170 +96,178 @@
     </div>
 </div>
 
-<!-- Additional CSS and JavaScript -->
 <style>
-    /* General Styles */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #F2ECE8; /* Background utama */
-        color: #333;
+    /* Reuse root variables from _Layout.cshtml */
+    :root {
+        --primary: #1976D2;
+        --accent: #FFFFFF;
+        --accent-hover: #E3F2FD;
+        --background: #FAFAFA;
+        --text: #212121;
+        --text-muted: #757575;
+        --danger: #D32F2F;
     }
 
-  
-    .sticky-header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background-color: #C7B7B3; /* Header sticky */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
+    .main {
+        background: var(--background);
     }
 
-        .sticky-header.scrolled {
-            background-color: #C7B7B3; /* Tetap gunakan warna solid saat discroll */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-    /* Buttons with Solid Colors */
-    .btn-gradient-info {
-        background: linear-gradient(90deg, #0d6efd, #17a2b8);
-        color: white;
-        transition: all 0.3s ease;
+    .pagetitle {
+        background: var(--accent);
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        animation: fadeInUp 0.5s ease-out;
     }
 
-        .btn-gradient-info:hover {
-            background: linear-gradient(90deg, #17a2b8, #0d6efd);
+        .pagetitle h1 {
+            color: var(--primary);
+            font-weight: bold;
         }
 
-    .btn-gradient-warning {
-        background: linear-gradient(90deg, #ffc107, #fd7e14);
-        color: white;
-        transition: all 0.3s ease;
+    .breadcrumb-item a {
+        color: var(--primary);
+        transition: color 0.3s ease-in-out;
     }
 
-        .btn-gradient-warning:hover {
-            background: linear-gradient(90deg, #fd7e14, #ffc107);
+        .breadcrumb-item a:hover {
+            color: var(--accent-hover);
         }
 
-    .btn-gradient-danger {
-        background: linear-gradient(90deg, #dc3545, #e83e8c);
-        color: white;
-        transition: all 0.3s ease;
+    .btn-create, .btn-update, .btn-delete {
+        border-radius: 6px;
+        padding: 6px 12px;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 
-        .btn-gradient-danger:hover {
-            background: linear-gradient(90deg, #e83e8c, #dc3545);
+    .btn-create, .btn-update {
+        background: var(--primary);
+        color: var(--accent);
+    }
+
+        .btn-create:hover, .btn-update:hover {
+            background: var(--accent-hover);
+            color: var(--primary);
+            opacity: 0.9;
+            transform: scale(1.05);
+            box-shadow: 0 2px 4px rgba(25, 118, 210, 0.2);
         }
 
-    /* Fade-in Effect */
-    @@keyframes fadeInCard {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+    .btn-delete {
+        background: var(--danger);
+        color: var(--accent);
+    }
+
+        .btn-delete:hover {
+            background: #b71c1c;
+            opacity: 0.9;
+            transform: scale(1.05);
+            box-shadow: 0 2px 4px rgba(211, 47, 47, 0.2);
         }
 
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .product-grid {
+        animation: fadeInUp 0.5s ease-out 0.2s;
+        opacity: 0;
+        animation-fill-mode: forwards;
     }
 
     .fade-in-card {
-        animation: fadeInCard 0.5s ease forwards;
+        animation: fadeInUp 0.5s ease-out forwards;
     }
 
-    /* Product Image Hover Zoom */
+        .fade-in-card:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .fade-in-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .fade-in-card:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .fade-in-card:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .fade-in-card:nth-child(5) {
+            animation-delay: 0.7s;
+        }
+
+    .product-card {
+        background: var(--accent);
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+    }
+
+        .product-card:hover {
+            background: var(--accent-hover);
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(25, 118, 210, 0.2);
+        }
+
     .product-image {
-        transition: transform 0.3s ease;
-        width: 100%;
-        height: 250px; /* Tinggi gambar lebih besar */
+        max-height: 200px;
         object-fit: cover;
+        transition: transform 0.3s ease-in-out;
     }
 
         .product-image:hover {
-            transform: scale(1.1); /* Efek zoom saat hover */
+            transform: scale(1.1);
         }
 
-    /* Tooltip Styling */
+    .card-title {
+        color: var(--primary);
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .card-text {
+        color: var(--text);
+    }
+
     .description-tooltip {
         cursor: pointer;
         text-decoration: underline dotted;
     }
 
-    /* Card Design */
-    .product-card {
-        background-color: #fff; /* Warna latar kartu */
-        border: 1px solid #ddd;
-        border-radius: 15px; /* Sudut melengkung */
-        overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan halus */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        margin-bottom: 30px; /* Jarak bawah lebih besar */
-    }
-
-        .product-card:hover {
-            transform: translateY(-10px); /* Efek terangkat saat hover */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih tebal saat hover */
-        }
-
-    /* Price and Badge Styling */
-    .current-price {
-        font-size: 18px;
+    .price-format {
+        font-size: 1.1rem;
         font-weight: bold;
-        color: #1D347A; /* Warna harga utama */
+        color: var(--primary);
     }
 
-    .original-price {
-        font-size: 14px;
-        color: #C7B7B3; /* Warna harga asli (coret) */
-        text-decoration: line-through;
+    .badge {
+        font-size: 0.85rem;
+        padding: 6px 12px;
     }
 
-    .discount-badge {
-        background-color: #FF5733; /* Warna badge diskon */
-        color: white;
-        font-size: 12px;
-        padding: 5px 10px;
-        border-radius: 5px;
-        margin-left: 10px;
-    }
-
-    /* Rating Stars */
     .rating i {
-        color: gold; /* Bintang aktif */
+        font-size: 0.9rem;
         margin-right: 2px;
     }
 
-        .rating i.text-muted {
-            color: #ddd; /* Bintang tidak aktif */
-        }
+    /* Animations */
+    @@keyframes fadeInUp {
+        from
 
-    /* Responsive Design */
-    .product-grid {
-        margin-top: 20px;
+    {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    .product-card {
-        margin-bottom: 20px; /* Jarak antar kartu lebih besar */
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    @@keyframes pulse {
-        0% {
-            transform: scale(1);
-        }
-
-        50% {
-            transform: scale(1.1);
-        }
-
-        100% {
-            transform: scale(1);
-        }
     }
 
-    /* Responsive Design */
+    /* Responsive adjustments */
     @@media (max-width: 768px) {
         .product-card
 
@@ -280,52 +275,63 @@
         margin-bottom: 20px;
     }
 
+    .product-image {
+        max-height: 150px;
     }
-   
+
+    .btn-create, .btn-update, .btn-delete {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    }
 </style>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Show loading animation
-        const loading = document.getElementById('loading');
-        const productGrid = document.getElementById('productGrid');
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Show loading animation
+            const loading = document.getElementById('loading');
+            const productGrid = document.getElementById('productGrid');
 
-        loading.style.display = 'block';
-        setTimeout(() => {
-            loading.style.display = 'none';
-            productGrid.style.opacity = '1';
-            productGrid.style.transform = 'translateY(0)';
-        }, 1000);
+            loading.style.display = 'block';
+            setTimeout(() => {
+                loading.style.display = 'none';
+                productGrid.style.opacity = '1';
+                productGrid.style.transform = 'translateY(0)';
+            }, 1000);
 
-        // Initialize tooltips
-        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+            // Format prices
+            document.querySelectorAll('.price-format').forEach(function (element) {
+                let value = parseFloat(element.textContent);
+                if (!isNaN(value)) {
+                    element.textContent = "IDR " + value.toLocaleString("id-ID", { minimumFractionDigits: 0 });
+                }
+            });
 
-        // Handle delete button click
-        document.querySelectorAll('.delete-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const productId = this.getAttribute('data-id');
-                const productName = this.getAttribute('data-name');
-                document.getElementById('productId').value = productId;
-                document.getElementById('productName').textContent = productName;
-                const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
-                deleteModal.show();
+            // Initialize tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.forEach(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+            // Handle delete button click
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const productId = this.getAttribute('data-id');
+                    const productName = this.getAttribute('data-name');
+                    document.getElementById('productId').value = productId;
+                    document.getElementById('productName').textContent = productName;
+                    const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+                    deleteModal.show();
+                });
             });
         });
-
-        // Fade-in effect for cards
-        const cards = document.querySelectorAll('.fade-in-card');
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 100);
-        });
-    });
-
-       
-
-</script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+    </script>
+}

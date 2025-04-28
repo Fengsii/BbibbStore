@@ -22,11 +22,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Models.DB
         public DateTime UpdatedAt { get; set; }
 
         public ICollection<UserSaldo> UserSaldos { get; set; } = new List<UserSaldo>();
-        //public ICollection<Cart> Carts { get; set; } = new List<Cart>();
         public ICollection<Order> Orders { get; set; } = new List<Order>();
-        //public ICollection<Review> Reviews { get; set; } = new List<Review>();
-        //public ICollection<Wishlists> Wishlists { get; set; } = new List<Wishlists>();
-
 
     }
 }

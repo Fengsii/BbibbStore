@@ -17,41 +17,10 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
             _context = context;
         }
 
-        ///===================== PROFILE SEVICE =====================\\\
-        //public User GetUserProfileById(int id)
-        //{
-        //    var data = _context.Users.Where(x => x.Id == id && x.UserStatus != GeneralStatusData.delete).FirstOrDefault();
-        //    if (data == null)
-        //    {
-        //        return new User();
-        //    }
-
-        //    return data;
-        //}
-
-        //public bool EditUserProfile(UserProfileDTO userProfileDTO)
-        //{
-        //    var data = _context.Users.FirstOrDefault(x => x.Id == userProfileDTO.Id);
-        //    if (data == null)
-        //    {
-        //        return false;
-        //    }
-        //    data.Name = userProfileDTO.Name;
-        //    data.Username = userProfileDTO.Username;
-        //    data.Email = userProfileDTO.Email;
-        //    data.PhoneNumber = userProfileDTO.PhoneNumber;
-        //    data.Image = userProfileDTO.Image;
-        //    data.UpdatedAt = DateTime.Now;
-
-
-        //    _context.Users.Update(data);
-        //    _context.SaveChanges();
-        //    return true;
-        //}
-
+     
         public User GetUserProfileById(int userId)
         {
-            // Find and return user by ID, or return null if not found
+           
             return _context.Users
                 .FirstOrDefault(u => u.Id == userId && u.UserStatus != GeneralStatus.GeneralStatusData.delete);
         }
@@ -60,7 +29,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
         {
             try
             {
-                // Find the user in the database
+               
                 var user = _context.Users.Find(userProfileDTO.Id);
 
                 System.Diagnostics.Debug.WriteLine($"[TopUp POST] User Id Saldo: {userProfileDTO.Id}");
@@ -111,45 +80,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
             return data;
         }
 
-        //public bool AddUserSaldo(UserSaldoDTO userSaldoDTO)
-        //{
-        //    System.Diagnostics.Debug.WriteLine($"errro : {userSaldoDTO.Id}");
-        //    try
-        //    {
-        //        var existingSaldo = _context.UserSaldos.FirstOrDefault(s => s.UserId == userSaldoDTO.UserId);
-
-        //        if (existingSaldo == null)
-        //        {
-        //            // Create new record if no saldo exists for this user
-        //            var newSaldo = new UserSaldo
-        //            {
-        //                UserId = userSaldoDTO.UserId,
-        //                Saldo = userSaldoDTO.Saldo,
-        //                LastUpdated = DateTime.Now
-        //            };
-        //            System.Diagnostics.Debug.WriteLine($"Saldo Baru : {newSaldo.Saldo}");
-        //            _context.UserSaldos.Add(newSaldo);
-        //        }
-        //        else
-        //        {
-        //            // Update existing record
-        //            existingSaldo.Saldo += userSaldoDTO.Saldo;
-        //            existingSaldo.LastUpdated = DateTime.Now;
-
-        //            System.Diagnostics.Debug.WriteLine($"Saldo ditambah : {existingSaldo.Saldo}");
-
-        //            _context.UserSaldos.Update(existingSaldo);
-        //        }
-
-        //        _context.SaveChanges();
-        //        return true;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
-
+       
         public bool AddUserSaldo(UserSaldoDTO userSaldoDTO)
         {
             try

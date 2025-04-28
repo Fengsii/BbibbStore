@@ -53,6 +53,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
 
             data.UserId = orderanDTO.UserId;
             data.OrderCode = orderanDTO.OrderCode;
+            data.OrderDate = orderanDTO.OrderDate;
             data.Status = orderanDTO.Status;
 
             _context.Orders.Update(data);
@@ -109,7 +110,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
                 // Generate order code
                 string orderCode = $"ORD-{DateTime.Now:yyyyMMdd}-{Guid.NewGuid().ToString().Substring(0, 4).ToUpper()}";
 
-                // Get product and size info
+               
                 var product = _context.Products.Find(productId);
                 var productSize = _context.ProductSizes
                     .Include(ps => ps.Product)
@@ -120,10 +121,10 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
                     throw new Exception("Produk atau ukuran produk tidak ditemukan");
                 }
 
-                // Check stock
+               
                 if (productSize.Stock < quantity)
                 {
-                    // Perbaikan di sini - gunakan productSize.Size langsung (string)
+                    
                     throw new Exception($"Stok tidak mencukupi untuk ukuran {productSize.Size}. Stok tersedia: {productSize.Stock}");
                 }
 
@@ -145,7 +146,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
                     OrderId = order.Id,
                     ProductId = productId,
                     Quantity = quantity,
-                    SelectedSize = productSize.Size, // Simpan string size langsung
+                    SelectedSize = productSize.Size, 
                     PriceAtPurchase = product.Price,
                     Image = product.Image
                 };

@@ -38,7 +38,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
                 // Get order by ID
                 var order = _order.GetOrderanById(id);
                 var userSaldo = _context.UserSaldos
-           .FirstOrDefault(us => us.UserId == userId); // Mencari saldo berdasarkan UserId
+           .FirstOrDefault(us => us.UserId == userId); 
 
                 if (order == null)
                 {
@@ -46,7 +46,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
                     return RedirectToAction("Index", "DashboardUser");
                 }
 
-                // Get order details including product information
+               
                 var orderDetails = _context.OrderDetails
                     .Include(od => od.Product)
                     .Where(od => od.OrderId == id)
@@ -76,9 +76,9 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
         {
             try
             {
-                int userId = GetCurrentUserId(); // ID user yang login
+                int userId = GetCurrentUserId(); 
 
-                // Get all orders for the current user
+               
                 var orders = _context.Orders
                     .Where(o => o.UserId == userId)
                     .Include(o => o.OrderDetails)
@@ -86,7 +86,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
                     .OrderByDescending(o => o.OrderDate)
                     .ToList();
 
-                // Group by status for the view
+               
                 var viewModel = new OrderHistoryViewDTO
                 {
                     AllOrders = orders,

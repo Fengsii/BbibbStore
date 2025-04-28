@@ -108,7 +108,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
 
         public List<RegisterDTO> GetAllUser()
         {
-            var data = _context.Users.Where(x => x.UserStatus != GeneralStatusData.delete).Select(x => new RegisterDTO
+            var data = _context.Users.Where(x => x.UserStatus != GeneralStatusData.delete && x.Id != 1).Select(x => new RegisterDTO
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -165,9 +165,8 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
             data.PhoneNumber = userProfileDTO.PhoneNumber;
             data.Address = userProfileDTO.Address;
             data.Image = userProfileDTO.Image;
-            // Perbaiki: Jangan set CreatedAt di sini, tapi set UpdatedAt
-            // data.CreatedAt = DateTime.Now;  <- Hapus ini
-            data.UpdatedAt = userProfileDTO.UpdatedAt; // Gunakan nilai dari DTO
+            
+            data.UpdatedAt = userProfileDTO.UpdatedAt; 
 
             _context.Users.Update(data);
             _context.SaveChanges();

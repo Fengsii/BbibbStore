@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JLgJIdK3t7d3rlsl8juOuoYzRnYz23QB1bcmZB9j71E=",
+  "Hash": "TzINfIOkqtFDiSYc1St0ds6TEw5Zo+fjIRmrcipqbvs=",
   "Source": "EFENGSI_RAHMANTO_ZALUKHU",
   "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
   "Mode": "Default",
@@ -18602,6 +18602,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\2_88917a12-b0f2-4be6-9589-044b67b96109.jpg"
     },
     {
+      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16.jpeg",
+      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
+      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
+      "RelativePath": "uploads/20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vbqcg2b3m0",
+      "Integrity": "S9j+8HFL9dcUO+l7PwrttYlnqT/71jIvUKXnPUBvxlo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\258300da-b3f2-4e84-b7b2-b660a5d38083_b1.jpg",
       "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
       "SourceType": "Discovered",
@@ -19043,6 +19064,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\ad2bd529-3849-47f6-b3c0-e679b6ea4996_Baju Custom Made.jpeg"
     },
     {
+      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\b65db294-8778-41f5-aedf-b1dc7ad3217c_b8.jpg",
+      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
+      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
+      "RelativePath": "uploads/b65db294-8778-41f5-aedf-b1dc7ad3217c_b8#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7x37tnd1c2",
+      "Integrity": "ZedInb5qTQ/LXYN6Nr4LPXrbl2Ccc+8aTOXmpNyeWfw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\b65db294-8778-41f5-aedf-b1dc7ad3217c_b8.jpg"
+    },
+    {
       "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\ba90e180-6b19-4b4c-ac60-506ae7f6778b_C# Struktur ASP.Net Core.png",
       "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
       "SourceType": "Discovered",
@@ -19209,27 +19251,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\f9724e4c-80d3-4ef3-8646-f65548bba3f8_Hodie2.jpeg"
-    },
-    {
-      "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg",
-      "SourceId": "EFENGSI_RAHMANTO_ZALUKHU",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\",
-      "BasePath": "_content/EFENGSI_RAHMANTO_ZALUKHU",
-      "RelativePath": "uploads/fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2#[.{fingerprint}]?.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "phkzlh785e",
-      "Integrity": "gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg"
     },
     {
       "Identity": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_1_15dc09ca-14de-4e8b-9f6f-67c10504da39.jpg",
@@ -86775,7 +86796,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:57:56 GMT"
+          "Value": "Mon, 28 Apr 2025 08:27:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -86820,7 +86841,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:57:56 GMT"
+          "Value": "Mon, 28 Apr 2025 08:27:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -86865,7 +86886,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:57:56 GMT"
+          "Value": "Mon, 28 Apr 2025 08:27:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -86902,7 +86923,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 18:57:56 GMT"
+          "Value": "Mon, 28 Apr 2025 08:27:53 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -92329,6 +92350,88 @@
       ]
     },
     {
+      "Route": "uploads/20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16.jpeg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "48094"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S9j+8HFL9dcUO+l7PwrttYlnqT/71jIvUKXnPUBvxlo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 10:22:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-S9j+8HFL9dcUO+l7PwrttYlnqT/71jIvUKXnPUBvxlo="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16.vbqcg2b3m0.jpeg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "48094"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S9j+8HFL9dcUO+l7PwrttYlnqT/71jIvUKXnPUBvxlo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 10:22:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vbqcg2b3m0"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-S9j+8HFL9dcUO+l7PwrttYlnqT/71jIvUKXnPUBvxlo="
+        }
+      ]
+    },
+    {
       "Route": "uploads/258300da-b3f2-4e84-b7b2-b660a5d38083_b1.gw8iswvthj.jpg",
       "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\258300da-b3f2-4e84-b7b2-b660a5d38083_b1.jpg",
       "Selectors": [],
@@ -94051,6 +94154,88 @@
       ]
     },
     {
+      "Route": "uploads/b65db294-8778-41f5-aedf-b1dc7ad3217c_b8.7x37tnd1c2.jpg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\b65db294-8778-41f5-aedf-b1dc7ad3217c_b8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "58154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZedInb5qTQ/LXYN6Nr4LPXrbl2Ccc+8aTOXmpNyeWfw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 10:15:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7x37tnd1c2"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/b65db294-8778-41f5-aedf-b1dc7ad3217c_b8.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZedInb5qTQ/LXYN6Nr4LPXrbl2Ccc+8aTOXmpNyeWfw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/b65db294-8778-41f5-aedf-b1dc7ad3217c_b8.jpg",
+      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\b65db294-8778-41f5-aedf-b1dc7ad3217c_b8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "58154"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZedInb5qTQ/LXYN6Nr4LPXrbl2Ccc+8aTOXmpNyeWfw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 10:15:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZedInb5qTQ/LXYN6Nr4LPXrbl2Ccc+8aTOXmpNyeWfw="
+        }
+      ]
+    },
+    {
       "Route": "uploads/ba90e180-6b19-4b4c-ac60-506ae7f6778b_C# Struktur ASP.Net Core.1kff0jyyae.png",
       "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\ba90e180-6b19-4b4c-ac60-506ae7f6778b_C# Struktur ASP.Net Core.png",
       "Selectors": [],
@@ -94703,88 +94888,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-LWIndgcOh3wq8z0TfpKgOvvhihdz7irKXESqaRJmbJ8="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg",
-      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "39071"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 22:42:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY="
-        }
-      ]
-    },
-    {
-      "Route": "uploads/fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.phkzlh785e.jpeg",
-      "AssetFile": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "39071"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 22:42:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "phkzlh785e"
-        },
-        {
-          "Name": "label",
-          "Value": "uploads/fb5fe7d9-a71d-43c9-9757-62a75b3aaab0_Kemeja2.jpeg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-gyQ/J9EowQ7r3cmRnd6J6dsdVNdGtnynNXg2StBfWKY="
         }
       ]
     },
