@@ -1,8 +1,94 @@
 ﻿
+@* @using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO *@
+@* @model UserSaldoDTO *@
+@* @{ *@
+@*     Layout = null;  *@
+@* } *@
+
+@* <!DOCTYPE html> *@
+@* <html lang="id"> *@
+@* <head> *@
+@*     <meta charset="UTF-8"> *@
+@*     <meta name="viewport" content="width=device-width, initial-scale=1.0"> *@
+@*     <title>Saldo & Top Up</title> *@
+@*     <link rel="stylesheet" href="~/assets3/Css/UserSaldoStyle.css" /> *@
+@*     <style> *@
+
+@*     </style> *@
+@* </head> *@
+@* <body> *@
+@*     <div class="container"> *@
+@*         <div class="card balance-section"> *@
+@*             <h2><i class="fa fa-wallet"></i> Saldo Anda</h2> *@
+@*             <div class="balance-amount">Rp @Model.CurrentSaldo.ToString("N0")</div> *@
+@*         </div> *@
+
+@*         <div class="card topup-section"> *@
+@*             <h3><i class="fa fa-money-bill-wave"></i> Top Up Saldo</h3> *@
+
+@*             @if (TempData["SuccessMessage"] != null) *@
+@*             { *@
+@*                 <div class="alert alert-success"> *@
+@*                     @TempData["SuccessMessage"] *@
+@*                 </div> *@
+@*             } *@
+
+@*             @if (TempData["ErrorMessage"] != null) *@
+@*             { *@
+@*                 <div class="alert alert-danger"> *@
+@*                     @TempData["ErrorMessage"] *@
+@*                 </div> *@
+@*             } *@
+
+@*             <form class="topup-form" asp-controller="UserProfile" asp-action="TopUpSaldo" method="post"> *@
+@*                 <div class="form-group"> *@
+@*                     <label for="topup-amount">Nominal Top Up (Rp)</label> *@
+@*                     <input type="number" asp-for="Saldo"id="topup-amount" min="10000" *@
+@*                            placeholder="Masukkan nominal"  required> *@
+@*                     <span asp-validation-for="Saldo" class="text-danger"></span> *@
+@*                 </div> *@
+@*                 <button type="submit" class="btn btn-topup" id="topup-btn">Top Up</button> *@
+@*             </form> *@
+@*         </div> *@
+@*     </div> *@
+
+@*     <script> *@
+@*         // Format number to Rupiah *@
+@*         const formatRupiah = (number) => { *@
+@*             return 'Rp ' + number.toLocaleString('id-ID'); *@
+@*         }; *@
+
+@*         // Input validation *@
+@*         document.getElementById('topup-amount').addEventListener('input', function() { *@
+@*             const value = parseInt(this.value); *@
+@*             document.getElementById('topup-btn').disabled = !value || value < 10000; *@
+@*         }); *@
+
+@*         // Auto-hide alert setelah 5 detik *@
+@*         document.addEventListener('DOMContentLoaded', function() { *@
+@*             const alerts = document.querySelectorAll('.alert'); *@
+@*             alerts.forEach(alert => { *@
+@*                 setTimeout(() => { *@
+@*                     alert.style.opacity = '0'; *@
+@*                     setTimeout(() => { *@
+@*                         alert.style.display = 'none'; *@
+@*                     }, 500); *@
+@*                 }, 5000); *@
+@*             }); *@
+@*         }); *@
+@*     </script> *@
+@* </body> *@
+@* </html> *@
+
+
+
+
+
+
 @using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
 @model UserSaldoDTO
 @{
-    Layout = null; 
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -11,28 +97,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saldo & Top Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="~/assets3/Css/UserSaldoStyle.css" />
+    <style>
+       
+    </style>
 </head>
 <body>
     <div class="container">
+        <a href="@Url.Action("Index", "UserProfile")" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Kembali
+        </a>
+
         <div class="card balance-section">
-            <h2><i class="fa fa-wallet"></i> Saldo Anda</h2>
+            <h2><i class="fas fa-wallet"></i> Saldo Anda</h2>
             <div class="balance-amount">Rp @Model.CurrentSaldo.ToString("N0")</div>
+            <button class="refresh-btn" onclick="location.reload()">
+                <i class="fas fa-sync-alt"></i> Refresh
+            </button>
         </div>
 
         <div class="card topup-section">
-            <h3><i class="fa fa-money-bill-wave"></i> Top Up Saldo</h3>
+            <h3><i class="fas fa-money-bill-wave"></i> Top Up Saldo</h3>
 
             @if (TempData["SuccessMessage"] != null)
             {
-                <div class="alert alert-success">
+                <div class="alert alert-success" style="display: block;">
                     @TempData["SuccessMessage"]
                 </div>
             }
 
             @if (TempData["ErrorMessage"] != null)
             {
-                <div class="alert alert-danger">
+                <div class="alert alert-error" style="display: block;">
                     @TempData["ErrorMessage"]
                 </div>
             }
@@ -40,11 +137,11 @@
             <form class="topup-form" asp-controller="UserProfile" asp-action="TopUpSaldo" method="post">
                 <div class="form-group">
                     <label for="topup-amount">Nominal Top Up (Rp)</label>
-                    <input type="number" asp-for="Saldo"id="topup-amount" min="10000"
-                           placeholder="Masukkan nominal"  required>
+                    <input type="number" asp-for="Saldo" id="topup-amount" min="10000"
+                           placeholder="Masukkan nominal (min. 10,000)" required>
                     <span asp-validation-for="Saldo" class="text-danger"></span>
                 </div>
-                <button type="submit" class="btn btn-topup" id="topup-btn">Top Up</button>
+                <button type="submit" class="btn btn-topup" id="topup-btn">Top Up Sekarang</button>
             </form>
         </div>
     </div>
@@ -58,14 +155,17 @@
         // Input validation
         document.getElementById('topup-amount').addEventListener('input', function() {
             const value = parseInt(this.value);
-            document.getElementById('topup-btn').disabled = !value || value < 10000;
+            const btn = document.getElementById('topup-btn');
+            btn.disabled = !value || value < 10000;
+            btn.textContent = value >= 10000 ? 'Top Up Sekarang' : 'Nominal Tidak Valid';
         });
 
-        // Auto-hide alert setelah 5 detik
+        // Auto-hide alerts after 5 seconds
         document.addEventListener('DOMContentLoaded', function() {
             const alerts = document.querySelectorAll('.alert');
             alerts.forEach(alert => {
                 setTimeout(() => {
+                    alert.style.transition = 'opacity 0.5s';
                     alert.style.opacity = '0';
                     setTimeout(() => {
                         alert.style.display = 'none';

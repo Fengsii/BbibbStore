@@ -1065,6 +1065,14 @@
       "PackagePath": "staticwebassets\\assets2\\vendor\\sweetalert\\sweetalert.min.js"
     },
     {
+      "Id": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\assets3\\Css\\DaftarProdcutStyle.css",
+      "PackagePath": "staticwebassets\\assets3\\Css\\DaftarProdcutStyle.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\assets3\\Css\\DashboardAdminStyle.css",
+      "PackagePath": "staticwebassets\\assets3\\Css\\DashboardAdminStyle.css"
+    },
+    {
       "Id": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\assets3\\Css\\ListProdcutHome.css",
       "PackagePath": "staticwebassets\\assets3\\Css\\ListProdcutHome.css"
     },
@@ -3699,6 +3707,10 @@
     {
       "Id": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg",
       "PackagePath": "staticwebassets\\uploads\\payment-proofs\\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_25_4b654b95-9b12-46ec-aee9-d6a23071af6f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\payment-proofs\\payment_proof_25_4b654b95-9b12-46ec-aee9-d6a23071af6f.jpg"
     },
     {
       "Id": "C:\\Users\\DELL 7390\\Documents\\CSharp Lanjutan\\EFENGSI_RAHMANTO_ZALUKHU\\wwwroot\\uploads\\payment-proofs\\payment_proof_2_1ceb8ee0-239d-4015-95c5-ecbc0d7f1a09.jpg",

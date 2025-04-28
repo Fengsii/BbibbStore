@@ -13716,6 +13716,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\bodyStyle.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\DaftarProdcutStyle.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>assets3/Css/DaftarProdcutStyle.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>prydylqlwx</Fingerprint>
+      <Integrity>u1hoZwW3c76TfknEQ0vPKAPVhcLkHTysFahcL1/gMl4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\DaftarProdcutStyle.css'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\DashboardAdminStyle.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>assets3/Css/DashboardAdminStyle.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>eqy6trsc5f</Fingerprint>
+      <Integrity>Vj79EEpu5GBz07RAjToPeHwkxF6bp4obHeHs748qThE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\DashboardAdminStyle.css'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\footerStyle.css'))">
       <SourceType>Package</SourceType>
       <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
@@ -13872,8 +13908,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>fx9fplbwz8</Fingerprint>
-      <Integrity>A73bteoLthxOKRX2Lp+2SGAgOQAeHOVSn7ZydOeQ4rM=</Integrity>
+      <Fingerprint>9nncxbx8ni</Fingerprint>
+      <Integrity>SyAysIMeqx77MieA3ory6oV3DLRxGEZBgG8SBJ/C4Xw=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\UserProfileStyle.css'))</OriginalItemSpec>
@@ -13890,8 +13926,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>0jg0mhhewj</Fingerprint>
-      <Integrity>VGKTY3W7YxrL25SiC7h+SW9UWIVrE7BWTw1nbe1GbsM=</Integrity>
+      <Fingerprint>vma7ydf7gm</Fingerprint>
+      <Integrity>l5ckNULjFPAXd1kiYxGIPf2mgjPcQtcI0/FCdfcb8OU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets3\Css\UserSaldoStyle.css'))</OriginalItemSpec>
@@ -16649,6 +16685,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_24_ff60b70d-9b88-4c25-88cd-b56a00c0dea9.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_25_4b654b95-9b12-46ec-aee9-d6a23071af6f.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>EFENGSI_RAHMANTO_ZALUKHU</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EFENGSI_RAHMANTO_ZALUKHU</BasePath>
+      <RelativePath>uploads/payment-proofs/payment_proof_25_4b654b95-9b12-46ec-aee9-d6a23071af6f.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4rski6vqi5</Fingerprint>
+      <Integrity>kGgHUV/qIttYt4842Lyra0h3bYLfHn+rEH0TwIdnCCk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_25_4b654b95-9b12-46ec-aee9-d6a23071af6f.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\payment-proofs\payment_proof_2_1ceb8ee0-239d-4015-95c5-ecbc0d7f1a09.jpg'))">
       <SourceType>Package</SourceType>

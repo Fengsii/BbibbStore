@@ -16,6 +16,9 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="~/assets3/Css/UserProfileStyle.css" />
+    <style>
+
+    </style>
 </head>
 <body>
     <div class="container">
@@ -38,9 +41,14 @@
                 <li><a href="/PaymentDetail/OrderHistory"><i class="fa fa-shopping-bag"></i> Pesanan</a></li>
                 <li><a href="#reviews"><i class="fa fa-star"></i> Review</a></li>
                 <li><a href="#favorites"><i class="fa fa-heart"></i> Favorit</a></li>
-                <a href="@Url.Action("Index", "DashboardUser")" class="btn btn-back">
+                <a href="/DashboardUser/Index" class="btn btn-back">
                     <i class="fas fa-arrow-left"></i> Back
                 </a>
+                <li>
+                    <a href="/Authentication/Login" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Log Out
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Main Content -->
