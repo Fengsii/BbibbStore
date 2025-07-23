@@ -19,12 +19,6 @@ C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets\msbuild.EFENGSI_RAHMANTO_ZALUKHU.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets\msbuild.EFENGSI_RAHMANTO_ZALUKHU.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets\msbuild.build.EFENGSI_RAHMANTO_ZALUKHU.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.EFENGSI_RAHMANTO_ZALUKHU.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.EFENGSI_RAHMANTO_ZALUKHU.props
-C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\EFENGSI_RAHMANTO_ZALUKHU.dll
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\refint\EFENGSI_RAHMANTO_ZALUKHU.dll
@@ -113,3 +107,8 @@ C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\bin\Debug\
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutAdmin.cshtml.rz.scp.css
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\EFENGSI_.35F045F5.Up2Date
 C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\EFENGSI_RAHMANTO_ZALUKHU.sourcelink.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\DELL 7390\Documents\CSharp Lanjutan\EFENGSI_RAHMANTO_ZALUKHU\obj\Debug\net8.0\staticwebassets.build.json.cache

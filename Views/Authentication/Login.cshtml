@@ -1,11 +1,11 @@
-﻿@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
-@model LoginDTO
+﻿
 
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model LoginDTO
 
 @{
     Layout = null;
 }
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,92 +14,226 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Pages / Register - NiceAdmin Bootstrap Template</title>
+    <title>Login - BbibbStore</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
     <link href="~/assets/img/favicon.png" rel="icon">
     <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <style>
-        .input-group button {
-            border: 1px solid #ced4da;
-            border-left: none;
-            background-color: #fff;
-        }
 
-            .input-group button:hover {
-                background-color: #f8f9fa;
-            }
-
-            .input-group button i {
-                font-size: 1.2rem;
-            }
-    </style>
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="~/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="~/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="~/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="~/assets/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
-    * Template Name: NiceAdmin
-    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-    * Updated: Apr 20 2024 with Bootstrap v5.3.3
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
+    <style>
+        :root {
+            --primary-color: #4154f1;
+            --secondary-color: #717ff5;
+            --accent-color: #2f3ac1;
+            --light-color: #f6f9ff;
+            --dark-color: #012970;
+            --success-color: #28a745;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--light-color) 0%, #ffffff 100%);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .login-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(65, 84, 241, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+            .login-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: none;
+        }
+
+        .card-body {
+            padding: 2.5rem;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+            .form-control:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 0.25rem rgba(65, 84, 241, 0.25);
+            }
+
+        .btn-login {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+            .btn-login:hover {
+                background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+                transform: translateY(-2px);
+            }
+
+        .password-toggle {
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+            .password-toggle:hover {
+                color: var(--primary-color);
+            }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .login-logo i {
+                font-size: 2.5rem;
+                color: var(--primary-color);
+            }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .link-primary {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+            .link-primary:hover {
+                color: var(--accent-color);
+                text-decoration: underline;
+            }
+
+        /* Toast notification */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+        }
+
+        .toast-success {
+            background-color: var(--success-color);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Animation */
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        .animate-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="toast-container">
+        <!-- Toast notification will be inserted here -->
+    </div>
 
     <main>
-        <div class="container">
+        <div class="container animate-in">
             <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                                        <p class="text-center small">Enter your username & password to login</p>
+                        <div class="col-lg-5 col-md-7">
+                            <div class="login-card mb-3">
+                                <div class="card-header">
+                                    <div class="login-logo mx-auto">
+                                        <i class="bi bi-person-circle"></i>
                                     </div>
+                                    <h5 class="card-title mb-0">Welcome Back!</h5>
+                                    <p class="small mb-0">Sign in to continue to your account</p>
+                                </div>
+                                <div class="card-body">
                                     <form class="row g-3 needs-validation" asp-controller="Authentication" asp-action="Login" method="post" novalidate>
                                         <div class="col-12">
                                             <label for="yourUsername" class="form-label">Username</label>
-                                            <input type="text" name="username" asp-for="Username" class="form-control" id="yourUsername" required>
-                                            <div class="invalid-feedback">Please input a username.</div>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                                <input type="text" name="username" asp-for="Username" class="form-control" id="yourUsername" required placeholder="Enter your username">
+                                            </div>
+                                            <div class="invalid-feedback">Please enter your username</div>
                                         </div>
                                         <div class="col-12">
                                             <label for="yourPassword" class="form-label">Password</label>
                                             <div class="input-group">
-                                                <input type="password" asp-for="Password" class="form-control" id="yourPassword" required>
-                                                <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('yourPassword')">
-                                                    <i class="bi bi-eye"></i> <!-- Ikon mata -->
-                                                </button>
+                                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                                <input type="password" asp-for="Password" class="form-control" id="yourPassword" required placeholder="Enter your password">
+                                                <span class="input-group-text password-toggle" onclick="togglePassword('yourPassword')">
+                                                    <i class="bi bi-eye"></i>
+                                                </span>
                                             </div>
                                             <span class="text-danger" asp-validation-for="Password"></span>
                                         </div>
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" type="checkbox" asp-for="RememberMe">
-                                            <label class="form-check-label" asp-for="RememberMe">Remember Me</label>
+                                        <div class="col-12 d-flex justify-content-between align-items-center">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" asp-for="RememberMe">
+                                                <label class="form-check-label" asp-for="RememberMe">Remember me</label>
+                                            </div>
+                                            <a href="#" class="small link-primary">Forgot password?</a>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">Login</button>
+                                            <button class="btn btn-login w-100 text-white" type="submit">
+                                                <i class="bi bi-box-arrow-in-right me-2"></i> Login
+                                            </button>
                                         </div>
-                                        <div class="col-12">
-                                            <p class="small mb-0">Don't have account? <a href="/Authentication/Register" )">Create an account</a></p>
+                                        <div class="col-12 text-center">
+                                            <p class="small mb-0">Don't have an account? <a href="/Authentication/Register" class="link-primary">Sign up</a></p>
                                         </div>
                                     </form>
                                 </div>
@@ -109,54 +243,90 @@
                 </div>
             </section>
         </div>
-    </main><!-- End #main -->
+    </main>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="~/assets/vendor/chart.js/chart.umd.js"></script>
-    <script src="~/assets/vendor/echarts/echarts.min.js"></script>
-    <script src="~/assets/vendor/quill/quill.js"></script>
-    <script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
-    <script src="~/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="~/assets/js/main.js"></script>
 
     <script>
+        // Toggle password visibility
+        function togglePassword(inputId) {
+            const passwordInput = document.getElementById(inputId);
+            const icon = passwordInput.parentElement.querySelector('.password-toggle i');
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                icon.classList.remove("bi-eye");
+                icon.classList.add("bi-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                icon.classList.remove("bi-eye-slash");
+                icon.classList.add("bi-eye");
+            }
+        }
+
+        // Show toast notification
+        function showToast(message, isSuccess) {
+            const toastContainer = document.querySelector('.toast-container');
+
+            const toast = document.createElement('div');
+            toast.className = `toast ${isSuccess ? 'toast-success' : 'toast-danger'} show`;
+            toast.setAttribute('role', 'alert');
+            toast.setAttribute('aria-live', 'assertive');
+            toast.setAttribute('aria-atomic', 'true');
+
+            toast.innerHTML = `
+                <div class="toast-body d-flex justify-content-between align-items-center">
+                    <span>${message}</span>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            `;
+
+            toastContainer.appendChild(toast);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+
+            // Add click handler for close button
+            toast.querySelector('.btn-close').addEventListener('click', () => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            });
+        }
+
+        // Check for success/error messages on page load
         document.addEventListener("DOMContentLoaded", function () {
             const errorMessage = '@TempData["ErrorMessage"]';
             if (errorMessage) {
-                alert(errorMessage); // Tampilkan alert error
+                showToast(errorMessage, false);
             }
 
             const successMessage = '@TempData["SuccessMessage"]';
             if (successMessage) {
-                alert(successMessage); // Tampilkan alert sukses
+                showToast(successMessage, true);
             }
+
+            // Add animation to form inputs on focus
+            const inputs = document.querySelectorAll('.form-control');
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('animate__animated', 'animate__pulse');
+                });
+
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('animate__animated', 'animate__pulse');
+                });
+            });
         });
     </script>
-
-    <script>
-        function togglePassword(inputId) {
-            const passwordInput = document.getElementById(inputId);
-            const toggleButton = passwordInput.nextElementSibling.querySelector('i');
-
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-                toggleButton.classList.remove("bi-eye");
-                toggleButton.classList.add("bi-eye-slash");
-            } else {
-                passwordInput.type = "password";
-                toggleButton.classList.remove("bi-eye-slash");
-                toggleButton.classList.add("bi-eye");
-            }
-        }
-    </script>
-
 </body>
-
 </html>

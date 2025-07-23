@@ -34,6 +34,23 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
 
         }
 
+        public List<ProductDTO> GetListProductUI()
+        {
+            var data = _context.Products.Include(y => y.Category).Where(x => x.ProductStatus == GeneralStatusData.Published).Select(x => new ProductDTO
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Description = x.Description,
+                Price = x.Price,
+                Image = x.Image,
+                CategoryName = x.Category.Name,
+                ProductStatus = x.ProductStatus,
+
+            }).ToList();
+            return data;
+
+        }
+
         public Product GetProductById(int id)
         {
             var data = _context.Products.Where(x => x.Id == id && x.ProductStatus != GeneralStatusData.delete).FirstOrDefault();

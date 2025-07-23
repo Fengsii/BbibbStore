@@ -1,4 +1,5 @@
-﻿@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+﻿
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
 @model RegisterDTO
 
 @{
@@ -12,196 +13,431 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Pages / Register - NiceAdmin Bootstrap Template</title>
+    <title>Register - NiceAdmin</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
     <link href="~/assets/img/favicon.png" rel="icon">
     <link href="~/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <style>
-        .input-group button {
-            border: 1px solid #ced4da;
-            border-left: none; /* Hilangkan border kiri */
-            background-color: #fff;
-        }
-
-            .input-group button:hover {
-                background-color: #f8f9fa;
-            }
-
-            .input-group button i {
-                font-size: 1.2rem;
-            }
-    </style>
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="~/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="~/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="~/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="~/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="~/assets/css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4154f1;
+            --secondary-color: #717ff5;
+            --accent-color: #2f3ac1;
+            --light-color: #f6f9ff;
+            --dark-color: #012970;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+        }
 
-    <!-- =======================================================
-    * Template Name: NiceAdmin
-    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-    * Updated: Apr 20 2024 with Bootstrap v5.3.3
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
+        body {
+            background: linear-gradient(135deg, var(--light-color) 0%, #ffffff 100%);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .register-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(65, 84, 241, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+            .register-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: none;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+            .form-control:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 0.25rem rgba(65, 84, 241, 0.25);
+            }
+
+        .btn-register {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            color: white;
+        }
+
+            .btn-register:hover {
+                background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(65, 84, 241, 0.3);
+            }
+
+        .password-toggle {
+            cursor: pointer;
+            transition: color 0.3s;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-left: none;
+            border-radius: 0 8px 8px 0;
+            padding: 0 12px;
+            display: flex;
+            align-items: center;
+        }
+
+            .password-toggle:hover {
+                background-color: #f8f9fa;
+            }
+
+        .register-logo {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .register-logo i {
+                font-size: 2rem;
+                color: var(--primary-color);
+            }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .link-primary {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+            .link-primary:hover {
+                color: var(--accent-color);
+                text-decoration: underline;
+            }
+
+        .input-group-text {
+            background-color: white;
+            border-right: none;
+        }
+
+        .input-group .form-control {
+            border-left: none;
+        }
+
+        /* Sweet Alert Style Popup */
+        .custom-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            display: none;
+        }
+
+        .popup-success {
+            border-top: 5px solid var(--success-color);
+        }
+
+        .popup-error {
+            border-top: 5px solid var(--error-color);
+        }
+
+        .popup-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--success-color);
+        }
+
+        .popup-error .popup-icon {
+            color: var(--error-color);
+        }
+
+        .popup-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .popup-message {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .popup-close {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+            .popup-close:hover {
+                background: var(--accent-color);
+                transform: translateY(-2px);
+            }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1099;
+            display: none;
+        }
+
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        .animate-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .credits {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Success Popup -->
+    <div class="custom-popup popup-success" id="successPopup">
+        <div class="popup-icon">
+            <i class="bi bi-check-circle-fill"></i>
+        </div>
+        <h3 class="popup-title">Registration Successful!</h3>
+        <p class="popup-message" id="successMessage">Your account has been created successfully.</p>
+        <button class="popup-close" onclick="hidePopup()">Continue</button>
+    </div>
+
+    <!-- Error Popup -->
+    <div class="custom-popup popup-error" id="errorPopup">
+        <div class="popup-icon">
+            <i class="bi bi-x-circle-fill"></i>
+        </div>
+        <h3 class="popup-title">Registration Failed</h3>
+        <p class="popup-message" id="errorMessage">There was an error creating your account.</p>
+        <button class="popup-close" onclick="hidePopup()">Try Again</button>
+    </div>
+
+    <!-- Overlay -->
+    <div class="popup-overlay" id="popupOverlay"></div>
 
     <main>
-        <div class="container">
-
+        <div class="container animate-in">
             <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-                            <div class="d-flex justify-content-center py-4">
-                                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                                    <img src="~/assets/img/logo.png" alt="">
-                                    <span class="d-none d-lg-block">NiceAdmin</span>
-                                </a>
-                            </div><!-- End Logo -->
-
-                            <div class="card mb-3">
-
-                                <div class="card-body">
-
-                                    <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
-                                        <p class="text-center small">Enter your personal details to create account</p>
+                        <div class="col-lg-5 col-md-7">
+                            <div class="register-card mb-3">
+                                <div class="card-header">
+                                    <div class="register-logo mx-auto">
+                                        <i class="bi bi-person-plus"></i>
                                     </div>
+                                    <h5 class="card-title mb-0">Create Your Account</h5>
+                                    <p class="small mb-0">Join us today to get started</p>
+                                </div>
+                                <div class="card-body">
                                     <form class="row g-3 needs-validation" asp-controller="Authentication" asp-action="Register" method="post" novalidate>
                                         <div class="col-12">
-                                            <label for="yourName" class="form-label">Name</label>
-                                            <input type="text" name="name" asp-for="Name" class="form-control" id="name" required>
-                                            <div class="invalid-feedback">Please, enter your name!</div>
+                                            <label for="name" class="form-label">Full Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                                <input type="text" name="name" asp-for="Name" class="form-control" id="name" required placeholder="Enter your full name">
+                                            </div>
+                                            <div class="invalid-feedback">Please enter your name</div>
                                         </div>
 
                                         <div class="col-12">
                                             <label for="yourUsername" class="form-label">Username</label>
-                                            <input type="text" name="username" asp-for="Username" class="form-control" id="yourUsername" required>
-                                            <div class="invalid-feedback">Please input a username.</div>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+                                                <input type="text" name="username" asp-for="Username" class="form-control" id="yourUsername" required placeholder="Choose a username">
+                                            </div>
+                                            <div class="invalid-feedback">Please choose a username</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourUsername" class="form-label">Email</label>
-                                            <input type="text" name="email" asp-for="Email" class="form-control" id="email" required>
-                                            <div class="invalid-feedback">Please input a email.</div>
+                                            <label for="email" class="form-label">Email</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                                <input type="email" name="email" asp-for="Email" class="form-control" id="email" required placeholder="Enter your email">
+                                            </div>
+                                            <div class="invalid-feedback">Please enter a valid email</div>
                                         </div>
+
                                         <div class="col-12">
                                             <label for="yourPassword" class="form-label">Password</label>
                                             <div class="input-group">
-                                                <input type="password" asp-for="Password" class="form-control" id="yourPassword" required>
-                                                <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('yourPassword')">
-                                                    <i class="bi bi-eye"></i> <!-- Ikon mata -->
-                                                </button>
+                                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                                <input type="password" asp-for="Password" class="form-control" id="yourPassword" required placeholder="Create a password">
+                                                <span class="password-toggle" onclick="togglePassword('yourPassword')">
+                                                    <i class="bi bi-eye"></i>
+                                                </span>
                                             </div>
                                             <span class="text-danger" asp-validation-for="Password"></span>
                                         </div>
+
                                         <div class="col-12">
-                                            <label for="yourMatchPassword" class="form-label">Confirm Password</label>
+                                            <label for="confirmPassword" class="form-label">Confirm Password</label>
                                             <div class="input-group">
-                                                <input type="password" asp-for="ConfirmPassword" class="form-control" id="confirmPassword" required>
-                                                <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('confirmPassword')">
-                                                    <i class="bi bi-eye"></i> <!-- Ikon mata -->
-                                                </button>
+                                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                                <input type="password" asp-for="ConfirmPassword" class="form-control" id="confirmPassword" required placeholder="Confirm your password">
+                                                <span class="password-toggle" onclick="togglePassword('confirmPassword')">
+                                                    <i class="bi bi-eye"></i>
+                                                </span>
                                             </div>
                                             <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
                                         </div>
 
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                                            <button class="btn btn-register w-100" type="submit">
+                                                <i class="bi bi-person-plus me-2"></i> Create Account
+                                            </button>
                                         </div>
-                                        <div class="col-12">
-                                            <p class="small mb-0">Already have an account? <a href="/Authentication/Login">Log in</a></p>
+
+                                        <div class="col-12 text-center">
+                                            <p class="small mb-0">Already have an account? <a href="/Authentication/Login" class="link-primary">Log in</a></p>
                                         </div>
                                     </form>
-
-
                                 </div>
                             </div>
-
-                            <div class="credits">
-                                <!-- All the links in the footer should remain intact. -->
-                                <!-- You can delete the links only if you purchased the pro version. -->
-                                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                            <div class="credits text-center">
+                                Designed by <a href="https://bootstrapmade.com/" class="link-primary">BootstrapMade</a>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </section>
-
         </div>
-    </main><!-- End #main -->
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    </main>
 
     <!-- Vendor JS Files -->
-    <script src="~/assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="~/assets/vendor/chart.js/chart.umd.js"></script>
-    <script src="~/assets/vendor/echarts/echarts.min.js"></script>
-    <script src="~/assets/vendor/quill/quill.js"></script>
-    <script src="~/assets/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="~/assets/vendor/tinymce/tinymce.min.js"></script>
-    <script src="~/assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
     <script src="~/assets/js/main.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Cek apakah ada pesan error
-            const errorMessage = '@TempData["ErrorMessage"]';
-            if (errorMessage) {
-                alert(errorMessage); // Tampilkan alert error
-            }
-
-            // Cek apakah ada pesan sukses
-            const successMessage = '@TempData["SuccessMessage"]';
-            if (successMessage) {
-                alert(successMessage); // Tampilkan alert sukses
-            }
-        });
-    </script>
-
-    <script>
+        // Toggle password visibility
         function togglePassword(inputId) {
             const passwordInput = document.getElementById(inputId);
-            const toggleButton = passwordInput.nextElementSibling.querySelector('i');
+            const icon = passwordInput.parentElement.querySelector('.password-toggle i');
 
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
-                toggleButton.classList.remove("bi-eye");
-                toggleButton.classList.add("bi-eye-slash");
+                icon.classList.remove("bi-eye");
+                icon.classList.add("bi-eye-slash");
             } else {
                 passwordInput.type = "password";
-                toggleButton.classList.remove("bi-eye-slash");
-                toggleButton.classList.add("bi-eye");
+                icon.classList.remove("bi-eye-slash");
+                icon.classList.add("bi-eye");
             }
         }
+
+        // Show popup function
+        function showPopup(type, message) {
+            const popup = document.getElementById(`${type}Popup`);
+            const overlay = document.getElementById('popupOverlay');
+            const messageElement = document.getElementById(`${type}Message`);
+
+            messageElement.textContent = message;
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+
+            // Add animation class
+            popup.classList.add('animate-in');
+        }
+
+        // Hide popup function
+        function hidePopup() {
+            const popups = document.querySelectorAll('.custom-popup');
+            const overlay = document.getElementById('popupOverlay');
+
+            popups.forEach(popup => {
+                popup.style.display = 'none';
+            });
+
+            overlay.style.display = 'none';
+        }
+
+        // Check for success/error messages on page load
+        document.addEventListener("DOMContentLoaded", function () {
+            const errorMessage = '@TempData["ErrorMessage"]';
+            if (errorMessage) {
+                showPopup('error', errorMessage);
+            }
+
+            const successMessage = '@TempData["SuccessMessage"]';
+            if (successMessage) {
+                showPopup('success', successMessage);
+
+                // Optional: Redirect after successful registration
+                setTimeout(() => {
+                    window.location.href = '/Authentication/Login';
+                }, 2000);
+            }
+        });
     </script>
-
-
 </body>
-
 </html>

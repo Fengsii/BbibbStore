@@ -53,7 +53,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
 
             data.UserId = orderanDTO.UserId;
             data.OrderCode = orderanDTO.OrderCode;
-            data.OrderDate = orderanDTO.OrderDate;
+            data.OrderDate = DateTime.Now;
             data.Status = orderanDTO.Status;
 
             _context.Orders.Update(data);

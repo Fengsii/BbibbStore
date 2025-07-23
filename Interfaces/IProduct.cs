@@ -12,5 +12,6 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Interfaces
         public bool DeleteProduct(int id);
         public bool AddProduct(ProductDTO productDTO);
         public List<SelectListItem> Products();
+        public List<ProductDTO> GetListProductUI();
     }
 }

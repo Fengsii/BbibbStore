@@ -25,7 +25,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
         {
             try
             {
-                var users =_product.GetListProduct();
+                var users =_product.GetListProductUI();
 
                 // Debugging
                 if (users != null)

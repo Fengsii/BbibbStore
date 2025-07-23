@@ -75,7 +75,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.Name),
-                    new Claim(ClaimTypes.NameIdentifier, user.Username),
+                    new Claim(ClaimTypes.NameIdentifier, user.Username), 
                     new Claim(ClaimTypes.Role, user.Role),
                     new Claim("UserId", user.Id.ToString())
                 };
@@ -98,7 +98,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
                 {
                    
                     authProperties.IsPersistent = false;
-                    authProperties.ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(1);
+                    authProperties.ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(120);
 
                     Console.WriteLine("Remember Me tidak diaktifkan. Cookie akan bertahan selama sesi browser.");
                 }

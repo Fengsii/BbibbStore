@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EFENGSI_RAHMANTO_ZALUKHU")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+232f044f6215d6d2e21723f8037d856a67875f77")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71748f1e1b1d42f6698c07a0f7ea7b68c78c436b")]
 [assembly: System.Reflection.AssemblyProductAttribute("EFENGSI_RAHMANTO_ZALUKHU")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EFENGSI_RAHMANTO_ZALUKHU")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
