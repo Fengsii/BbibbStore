@@ -103,14 +103,31 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
                     Console.WriteLine("Remember Me tidak diaktifkan. Cookie akan bertahan selama sesi browser.");
                 }
 
-               
+
                 await HttpContext.SignInAsync(
                     CookieAuthenticationDefaults.AuthenticationScheme,
                     principal,
                     authProperties
                 );
 
-            
+
+                // 2. Tambahkan cookie biasa (plain text) untuk menampilkan username
+                Response.Cookies.Append("DisplayUsername", user.Username, new CookieOptions
+                {
+                    HttpOnly = false, // Bisa diakses via JavaScript (opsional)
+                    Secure = true, // Hanya dikirim via HTTPS
+                    SameSite = SameSiteMode.Strict,
+                    Expires = DateTimeOffset.UtcNow.AddMinutes(30) // Sesuaikan
+                });
+
+                //// Di AuthenticationController - Saat SignInAsync dipanggil
+                //await HttpContext.SignInAsync(
+                //    CookieAuthenticationDefaults.AuthenticationScheme,
+                //    principal,                    // Claims yang akan di-encrypt
+                //    authProperties               // Properties yang akan di-encrypt
+                //);
+
+
                 HttpContext.Session.SetInt32("UserId", user.Id);
                 HttpContext.Session.SetString("UserRole", user.Role);
                 HttpContext.Session.SetString("UserName", user.Name);
@@ -144,11 +161,11 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
-            //if (registerDTO.Password.Length < 7)
-            //{
-            //    TempData["ErrorMessage"] = "Password minimal 7 karakter";
-            //    return View(registerDTO);
-            //}
+            if (registerDTO.Password.Length < 7)
+            {
+                TempData["ErrorMessage"] = "Password minimal 7 karakter";
+                return View(registerDTO);
+            }
 
             if (registerDTO.Password != registerDTO.ConfirmPassword)
             {

@@ -263,6 +263,7 @@ wwwroot\assets2\vendor\slick\slick.less
 wwwroot\assets2\vendor\slick\slick.min.js
 wwwroot\assets2\vendor\slick\slick.scss
 wwwroot\assets2\vendor\sweetalert\sweetalert.min.js
+wwwroot\assets3.zip
 wwwroot\assets3\Css\bodyStyle.css
 wwwroot\assets3\Css\DaftarProdcutStyle.css
 wwwroot\assets3\Css\DashboardAdminStyle.css
@@ -949,3 +950,4 @@ wwwroot\uploads\payment-proofs\payment_proof_8_600e87e3-3551-4992-9898-5e7fc4811
 wwwroot\uploads\payment-proofs\payment_proof_8_cb1d90f9-cf8e-475a-bc0d-f335a04b776a.jpg
 wwwroot\uploads\payment-proofs\payment_proof_9_46b9e377-58cb-4ed2-be06-ff9845498340.jpg
 wwwroot\uploads\payment-proofs\payment_proof_9_e5b02126-c202-4180-937a-e05dcf3f31bf.jpg
+wwwroot\uploads\payment-proofs\payment_proof_37_9649d20a-cc84-4ab7-bec5-372e597e2048.jpg

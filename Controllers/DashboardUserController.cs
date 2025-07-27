@@ -21,6 +21,9 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Controllers
            _userProfile = userProfile;
         }
 
+
+        // MENAMPILKAN DATA KE USER
+
         public IActionResult Index()
         {
             try

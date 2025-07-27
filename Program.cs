@@ -40,19 +40,19 @@ builder.Services.AddSession(); // Registrasi service
 
 
 // Konfigurasi Session
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(1);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-    options.Cookie.SameSite = SameSiteMode.Lax;
-    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-});
+//builder.Services.AddSession(options =>
+//{
+//    options.IdleTimeout = TimeSpan.FromMinutes(1);
+//    options.Cookie.HttpOnly = true;
+//    options.Cookie.IsEssential = true;
+//    options.Cookie.SameSite = SameSiteMode.Lax;
+//    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+//});
 
 // Konfigurasi session
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(1); // Session timeout
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Session timeout
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
@@ -67,6 +67,14 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.Cookie.HttpOnly = true; // Cookie tidak bisa diakses melalui JavaScript
         options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Cookie hanya dikirim melalui HTTPS
     });
+
+
+
+
+
+
+
+
 
 // Kebijakan Authorization
 builder.Services.AddAuthorization(options =>
