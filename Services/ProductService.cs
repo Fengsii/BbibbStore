@@ -32,22 +32,64 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Services
             }).ToList();
             return data;
 
+            //return _context.Products
+            //    .Include(p => p.Category)
+            //    .Include(p => p.ProductSizes) // Tambahkan ini
+            //    .Where(x => x.ProductStatus == GeneralStatusData.Published)
+            //    .Select(x => new ProductDTO
+            //    {
+            //        Id = x.Id,
+            //        Name = x.Name,
+            //        Description = x.Description,
+            //        Price = x.Price,
+            //        Image = x.Image,
+            //        CategoryName = x.Category.Name,
+            //        ProductStatus = x.ProductStatus,
+            //        ProductSizes = x.ProductSizes.Select(ps => new ProductSizeDTO
+            //    {
+            //        Id = ps.Id,
+            //        Size = ps.Size,
+            //        Stock = ps.Stock,
+            //        ProductId = ps.ProductId
+            //    }).ToList()
+            //}).ToList();
+
         }
 
         public List<ProductDTO> GetListProductUI()
         {
-            var data = _context.Products.Include(y => y.Category).Where(x => x.ProductStatus == GeneralStatusData.Published).Select(x => new ProductDTO
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-                Price = x.Price,
-                Image = x.Image,
-                CategoryName = x.Category.Name,
-                ProductStatus = x.ProductStatus,
+            //var data = _context.Products.Include(y => y.Category).Where(x => x.ProductStatus == GeneralStatusData.Published).Select(x => new ProductDTO
+            //{
+            //    Id = x.Id,
+            //    Name = x.Name,
+            //    Description = x.Description,
+            //    Price = x.Price,
+            //    Image = x.Image,
+            //    CategoryName = x.Category.Name,
+            //    ProductStatus = x.ProductStatus,
 
-            }).ToList();
-            return data;
+            //}).ToList();
+            //return data;
+
+
+            return _context.Products
+        .Include(p => p.Category)
+        .Include(p => p.ProductSizes) // Pastikan include ProductSizes
+        .Where(x => x.ProductStatus == GeneralStatusData.Published)
+        .Select(x => new ProductDTO
+        {
+            Id = x.Id,
+            Name = x.Name,
+            Description = x.Description,
+            Price = x.Price,
+            Image = x.Image,
+            CategoryName = x.Category.Name,
+            ProductSizes = x.ProductSizes.Select(ps => new ProductSizeDTO
+            {
+                Size = ps.Size,
+                Stock = ps.Stock
+            }).ToList()
+        }).ToList();
 
         }
 

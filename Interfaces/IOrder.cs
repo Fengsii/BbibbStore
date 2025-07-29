@@ -1,4 +1,5 @@
-﻿using EFENGSI_RAHMANTO_ZALUKHU.Models.DB;
+﻿using EFENGSI_RAHMANTO_ZALUKHU.Models;
+using EFENGSI_RAHMANTO_ZALUKHU.Models.DB;
 using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -13,6 +14,12 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Interfaces
         public bool DeleteOrderan(int id);
         public List<SelectListItem> Orders();
         public int CreateNewOrder(int userId, int productId, int productSizeId, int quantity);
+
+        //=========================\\
+        public bool ProcessPayment(int orderId, string paymentMethod, string proofImage);
+        public OrderDetailDTO GetOrderDetails(int orderId, int userId);
+        public List<OrderDTO> GetUserOrders(int userId);
+        public CheckoutResult CreateOrderFromCart(int userId, List<CartItemDTO> cartItems);
 
     }
 }

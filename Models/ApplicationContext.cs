@@ -23,6 +23,8 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Models
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<CartItem> CartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -67,9 +69,32 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Models
                 .WithOne(o => o.Payment)
                 .HasForeignKey<Payment>(p => p.OrderId);
 
+            // Cart-User one-to-one relationship (satu user punya satu cart)
+            modelBuilder.Entity<Cart>()
+                .HasOne(c => c.User)
+                .WithOne(u => u.Cart) // Perlu menambahkan navigation property Cart di model User
+                .HasForeignKey<Cart>(c => c.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // CartItem-Cart many-to-one relationship
+            modelBuilder.Entity<CartItem>()
+                .HasOne(ci => ci.Cart)
+                .WithMany(c => c.CartItems)
+                .HasForeignKey(ci => ci.CartId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // CartItem-Product many-to-one relationship
+            modelBuilder.Entity<CartItem>()
+                .HasOne(ci => ci.Product)
+                .WithMany(p => p.CartItems) // Perlu menambahkan navigation property CartItems di model Product
+                .HasForeignKey(ci => ci.ProductId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+
+
             // Seeding admin default with SHA512 hashing
 
-             System.Diagnostics.Debug.WriteLine("cek321");
+            System.Diagnostics.Debug.WriteLine("cek321");
             var pepper = _configuration["Security:Papper"];
             var iteration = Convert.ToInt32(_configuration["Security:Iteration"]);
             var salt = Hasher.GenerateSalt();

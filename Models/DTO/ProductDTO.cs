@@ -17,5 +17,8 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
         public GeneralStatusData ProductStatus { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+
+        // Tambahkan ini
+        public List<ProductSizeDTO> ProductSizes { get; set; } = new List<ProductSizeDTO>();
     }
 }

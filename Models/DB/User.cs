@@ -12,6 +12,9 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Models.DB
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string Image { get; set; }
+        // Tambahkan navigation property untuk Cart
+        public Cart Cart { get; set; }
+
         [NotMapped]
         public IFormFile ImageFile { get; set; }
         public string Salt { get; set; }
@@ -23,6 +26,7 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Models.DB
 
         public ICollection<UserSaldo> UserSaldos { get; set; } = new List<UserSaldo>();
         public ICollection<Order> Orders { get; set; } = new List<Order>();
+       
 
     }
 }

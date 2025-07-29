@@ -1,4 +1,4 @@
-﻿@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+﻿@* @using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
 @model List<ProductDTO>
 @{
     ViewData["Title"] = "Daftar Produk";
@@ -67,4 +67,126 @@
             });
         });
     });
-</script>
+</script> *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+@using EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
+@model List<ProductDTO>
+@{
+    ViewData["Title"] = "Daftar Produk";
+}
+<style>
+
+</style>
+<link rel="stylesheet" href="~/assets3/Css/DaftarProdcutStyle.css" />
+<div class="container mt-4">
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle"></i> Tidak ada produk yang tersedia saat ini.
+        </div>
+    }
+    else
+    {
+        <div class="product-grid">
+            @foreach (var data in Model)
+            {
+                <div class="product-card">
+                    <a href="@Url.Action("Detail", "Product", new { id = data.Id })">
+                        <img src="@Url.Content(data.Image ?? "/images/default-product.png")"
+                             alt="Product Image"
+                             class="product-image"
+                             onerror="this.onerror=null;this.src='/images/default-product.png';" />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="@Url.Action("Detail", "Product", new { id = data.Id })">
+                                @data.Name
+                            </a>
+                        </h5>
+                        <p class="card-text">
+                            @(data.Description?.Length > 50 ? data.Description.Substring(0, 50) + "..." : data.Description)
+                        </p>
+                        <p class="card-text price">
+                            Rp @string.Format("{0:N0}", data.Price)
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <!-- Modal Trigger Button -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addToCartModal-@data.Id">
+                            Add To Cart
+                        </button>
+                        <a href="@Url.Action("Detail", "Product", new { id = data.Id })" class="btn btn-info">Detail</a>
+                    </div>
+                </div>
+
+                <!-- Modal untuk Add To Cart -->
+                <div class="modal fade" id="addToCartModal-@data.Id" tabindex="-1" aria-labelledby="addToCartModalLabel-@data.Id" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addToCartModalLabel-@data.Id">Tambah ke Keranjang</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form method="post" action="/Cart/AddToCart">
+                                <div class="modal-body">
+                                    <input type="hidden" name="productId" value="@data.Id" />
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Ukuran</label>
+                                        <select name="size" class="form-select" required>
+                                            @foreach (var size in data.ProductSizes)
+                                            {
+                                                <option value="@size.Size">@size.Size (Stok: @size.Stock)</option>
+                                            }
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Jumlah</label>
+                                        <input type="number" name="quantity" value="1" min="1" class="form-control" required />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-primary">Tambah ke Keranjang</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Animasi untuk munculnya card produk
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 150);
+        });
+
+        // Handle error gambar
+        document.querySelectorAll('.product-image').forEach(img => {
+            img.addEventListener('error', function() {
+                this.src = '/images/default-product.png';
+            });
+        });
+    });
+</script>   

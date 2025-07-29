@@ -880,6 +880,7 @@ wwwroot\ScemaBbibbStore\ScemaBbibbStoree.bmp
 wwwroot\uploads\000353d7-b9d9-43f8-9114-69e06c0f359f_My Selft.jpg
 wwwroot\uploads\01621425-1426-427a-b96c-88b5e868885d_b4.jpg
 wwwroot\uploads\125b781f-3e1f-442c-99a9-54f8bea1c9a5_Baju Custom Made.jpeg
+wwwroot\uploads\12_0e5e4909-503c-43d8-bf41-9670a8792344.png
 wwwroot\uploads\1bd15b3b-31ad-47b4-94f3-403ea59c11c5_Kemeja13.jpeg
 wwwroot\uploads\20cc5112-11ac-4b07-9b37-6feff94e818d_Kemeja16.jpeg
 wwwroot\uploads\258300da-b3f2-4e84-b7b2-b660a5d38083_b1.jpg
@@ -912,6 +913,7 @@ wwwroot\uploads\ad2bd529-3849-47f6-b3c0-e679b6ea4996_Baju Custom Made.jpeg
 wwwroot\uploads\b65db294-8778-41f5-aedf-b1dc7ad3217c_b8.jpg
 wwwroot\uploads\ba90e180-6b19-4b4c-ac60-506ae7f6778b_C# Struktur ASP.Net Core.png
 wwwroot\uploads\bb1ead26-0c4c-41f6-b770-3801fa68369c_Hodie7.jpeg
+wwwroot\uploads\c7a3d1df-08e2-4c77-ab01-6c8dee6d1dce_Image Expansion Renegade Immortal.jpeg
 wwwroot\uploads\cfa95102-ed61-4241-bcf0-fc1bc76c3db9_ada37ee5-c460-4af2-a085-bd4f20d106a9.jpeg
 wwwroot\uploads\e9bc2f08-af36-4f3b-83b3-2f13dc492d32_alwan2.jpg
 wwwroot\uploads\ee5c2fbf-94ad-4463-9f8f-bda5405403c3_Hodie2.jpeg
@@ -941,6 +943,7 @@ wwwroot\uploads\payment-proofs\payment_proof_32_812a23e0-1e59-4d43-a423-0830a3f7
 wwwroot\uploads\payment-proofs\payment_proof_33_26848b3c-d018-4b4e-96a0-5f7323e1357d.jpg
 wwwroot\uploads\payment-proofs\payment_proof_34_b6dbb6d7-e066-4dad-9b44-7dd1493a855b.jpg
 wwwroot\uploads\payment-proofs\payment_proof_35_e35fe937-59b1-4679-b1d6-2f40356d45e1.jpg
+wwwroot\uploads\payment-proofs\payment_proof_37_9649d20a-cc84-4ab7-bec5-372e597e2048.jpg
 wwwroot\uploads\payment-proofs\payment_proof_3_33f1e7b3-a4c4-4252-9856-a305a54ea9a0.jpg
 wwwroot\uploads\payment-proofs\payment_proof_4_ed3dc462-cbe4-4b6c-83bb-1e0a30c84947.jpg
 wwwroot\uploads\payment-proofs\payment_proof_5_572314e0-b9f5-4e18-95c5-c6e10933e36c.jpg
@@ -950,4 +953,3 @@ wwwroot\uploads\payment-proofs\payment_proof_8_600e87e3-3551-4992-9898-5e7fc4811
 wwwroot\uploads\payment-proofs\payment_proof_8_cb1d90f9-cf8e-475a-bc0d-f335a04b776a.jpg
 wwwroot\uploads\payment-proofs\payment_proof_9_46b9e377-58cb-4ed2-be06-ff9845498340.jpg
 wwwroot\uploads\payment-proofs\payment_proof_9_e5b02126-c202-4180-937a-e05dcf3f31bf.jpg
-wwwroot\uploads\payment-proofs\payment_proof_37_9649d20a-cc84-4ab7-bec5-372e597e2048.jpg

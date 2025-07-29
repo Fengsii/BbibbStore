@@ -1,0 +1,525 @@
+﻿@* @model List<EFENGSI_RAHMANTO_ZALUKHU.Models.DTO.CartItemDTO>
+
+
+@{
+    Layout = null;
+}
+
+<h2>Keranjang Belanja</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produk</th>
+                <th>Gambar</th>
+                <th>Harga</th>
+                <th>Ukuran</th>
+                <th>Jumlah</th>
+                <th>Subtotal</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>
+                        <img src="/images/@item.Image" width="50" height="50" />
+                    </td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@item.SelectedSize</td>
+                    <td>
+                        <form method="post" action="/Cart/UpdateQuantity">
+                            <input type="hidden" name="cartItemId" value="@item.Id" />
+                            <input type="number" name="quantity" value="@item.Quantity" min="1" />
+                            <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                        </form>
+                    </td>
+                    <td>@((item.Price * item.Quantity).ToString("C"))</td>
+                    <td>
+                        <form method="post" action="/Cart/Remove">
+                            <input type="hidden" name="cartItemId" value="@item.Id" />
+                            <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-right"><strong>Total:</strong></td>
+                <td><strong>@Model.Sum(i => i.Price * i.Quantity).ToString("C")</strong></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <form method="post" action="/Cart/Checkout">
+        <button type="submit" class="btn btn-success">Checkout</button>
+    </form>
+}
+else
+{
+    <div class="alert alert-info">
+        Keranjang belanja Anda kosong.
+    </div>
+    <a href="/Product" class="btn btn-primary">Belanja Sekarang</a>
+} *@
+
+
+
+
+
+
+
+
+
+
+@model List<EFENGSI_RAHMANTO_ZALUKHU.Models.DTO.CartItemDTO>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+            .header::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+                opacity: 0.3;
+            }
+
+            .header h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .header .cart-icon {
+                font-size: 3rem;
+                margin-bottom: 15px;
+                position: relative;
+                z-index: 1;
+            }
+
+        .content {
+            padding: 30px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.95rem;
+        }
+
+            .table thead {
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                color: white;
+            }
+
+            .table th {
+                padding: 20px 15px;
+                font-weight: 600;
+                text-align: left;
+                border: none;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .table td {
+                padding: 20px 15px;
+                border-bottom: 1px solid #f0f0f0;
+                vertical-align: middle;
+            }
+
+            .table tbody tr {
+                transition: all 0.3s ease;
+            }
+
+                .table tbody tr:hover {
+                    background: linear-gradient(135deg, #f8f9ff 0%, #e8f4f8 100%);
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                }
+
+        .product-image {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .product-image:hover {
+                transform: scale(1.1);
+            }
+
+        .price {
+            font-weight: 700;
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
+
+        .size-badge {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: #2d3748;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        .quantity-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-input {
+            width: 70px;
+            padding: 8px 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+            .quantity-input:focus {
+                outline: none;
+                border-color: #4facfe;
+                box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+            }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+        }
+
+            .btn-danger:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+            }
+
+        .btn-success {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+            color: white;
+            font-size: 1.1rem;
+            padding: 15px 40px;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(86, 171, 47, 0.3);
+        }
+
+            .btn-success:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 25px rgba(86, 171, 47, 0.4);
+            }
+
+        .total-row {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f4f8 100%);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+            .total-row td {
+                padding: 25px 15px;
+                border-top: 3px solid #4facfe;
+            }
+
+        .checkout-section {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f4f8 100%);
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .empty-cart-icon {
+            font-size: 4rem;
+            color: #cbd5e0;
+            margin-bottom: 20px;
+        }
+
+        .alert {
+            background: linear-gradient(135deg, #bee3f8 0%, #e6fffa 100%);
+            border: 1px solid #90cdf4;
+            color: #2c5282;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(144, 205, 244, 0.2);
+        }
+
+        .shopping-link {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(79, 172, 254, 0.3);
+        }
+
+            .shopping-link:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 25px rgba(79, 172, 254, 0.4);
+                color: white;
+                text-decoration: none;
+            }
+
+        @@media (max-width: 768px) {
+            .header h2
+
+        {
+            font-size: 2rem;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .table th,
+        .table td {
+            padding: 12px 8px;
+            font-size: 0.85rem;
+        }
+
+        .quantity-form {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .btn-sm {
+            width: 100%;
+        }
+
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @@keyframes fadeIn {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        .slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @@keyframes slideUp {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <div class="header">
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h2>Keranjang Belanja</h2>
+        </div>
+
+        <div class="content">
+            @if (Model.Any())
+            {
+                <div class="table-container slide-up">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><i class="fas fa-box"></i> Produk</th>
+                                <th><i class="fas fa-image"></i> Gambar</th>
+                                <th><i class="fas fa-tag"></i> Harga</th>
+                                <th><i class="fas fa-ruler"></i> Ukuran</th>
+                                <th><i class="fas fa-sort-numeric-up"></i> Jumlah</th>
+                                <th><i class="fas fa-calculator"></i> Subtotal</th>
+                                <th><i class="fas fa-cogs"></i> Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="price">@item.ProductName</td>
+                                    <td>
+                                        <img src="/images/@item.Image" class="product-image" width="50" height="50" />
+                                    </td>
+                                    <td class="price">@item.Price.ToString("C")</td>
+                                    <td>
+                                        <span class="size-badge">@item.SelectedSize</span>
+                                    </td>
+                                    <td>
+                                        <form method="post" action="/Cart/UpdateQuantity" class="quantity-form">
+                                            <input type="hidden" name="cartItemId" value="@item.Id" />
+                                            <input type="number" name="quantity" value="@item.Quantity" min="1" class="quantity-input" />
+                                            <button type="submit" class="btn btn-sm btn-primary">
+                                                <i class="fas fa-sync-alt"></i> Update
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td class="price">@((item.Price * item.Quantity).ToString("C"))</td>
+                                    <td>
+                                        <form method="post" action="/Cart/Remove">
+                                            <input type="hidden" name="cartItemId" value="@item.Id" />
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                <i class="fas fa-trash"></i> Hapus
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr class="total-row">
+                                <td colspan="5" style="text-align: right;">
+                                    <i class="fas fa-receipt"></i> <strong>Total:</strong>
+                                </td>
+                                <td><strong>@Model.Sum(i => i.Price * i.Quantity).ToString("C")</strong></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="checkout-section slide-up">
+                    <form method="post" action="/Cart/Checkout">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-credit-card"></i> Checkout Sekarang
+                        </button>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div class="empty-cart slide-up">
+                    <div class="empty-cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="alert">
+                        <i class="fas fa-info-circle"></i> Keranjang belanja Anda kosong.
+                    </div>
+                    <a href="/Product" class="shopping-link">
+                        <i class="fas fa-shopping-bag"></i>
+                        Belanja Sekarang
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

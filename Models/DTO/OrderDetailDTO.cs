@@ -13,6 +13,8 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Models.DTO
         public int Quantity { get; set; }
         public string SelectedSize { get; set; }
         public decimal PriceAtPurchase { get; set; } // Harga saat pembelian
-
+        public List<CartItemDTO> Items { get; internal set; }
+        public GeneralOrderStatusData Status { get; internal set; }
+        public DateTime OrderDate { get; internal set; }
     }
 }

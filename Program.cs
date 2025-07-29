@@ -32,6 +32,9 @@ builder.Services.AddScoped<IOrder, OrderService>();
 builder.Services.AddScoped<IOrderDetail, OrderDetailService>();
 builder.Services.AddScoped<IPayment, PaymentService>();
 builder.Services.AddScoped<IUserProfile, UserProfileService>();
+builder.Services.AddTransient<IFileService, FileService>();
+builder.Services.AddTransient<ICart, CartService>();
+
 //builder.Services.AddControllersWithViews();
 //memeriksa apakah user sudah login
 builder.Services.AddSession(); // Registrasi service

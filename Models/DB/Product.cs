@@ -25,6 +25,8 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Models.DB
         // Navigation properties
         public ICollection<ProductSize> ProductSizes { get; set; } = new List<ProductSize>();
         public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+        // Tambahkan navigation property untuk CartItems
+        public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 
     }
 }

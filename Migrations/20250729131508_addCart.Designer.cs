@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFENGSI_RAHMANTO_ZALUKHU.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250427185801_bb")]
-    partial class bb
+    [Migration("20250729131508_addCart")]
+    partial class addCart
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,69 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+
+            modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Cart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.CartItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CartId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SelectedSize")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartItems");
+                });
 
             modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Category", b =>
                 {
@@ -274,14 +337,14 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Migrations
                         {
                             Id = 1,
                             Address = "Bandung",
-                            CreatedAt = new DateTime(2025, 4, 27, 18, 58, 0, 657, DateTimeKind.Utc).AddTicks(1491),
+                            CreatedAt = new DateTime(2025, 7, 29, 13, 15, 7, 869, DateTimeKind.Utc).AddTicks(2835),
                             Email = "admin@example.com",
                             Image = "default-product.png.jpeg",
                             Name = "Administrator",
-                            PasswordHash = "fcLwQmUusWTKfClR3syPRuK8vMpjcL2r8b5hfT8iP0WDOZiOQbmeBHEkq1OkTzZbj1EzuvhuqKphBY2qfaUoOA==",
+                            PasswordHash = "cfHTOtlYM+euwpKXdk5CaS4kgSA4StTX44aGhZGNHcNWoa/apvhBz7TEWKtQfbZN8mTHi1udVs72UORACTK4pQ==",
                             PhoneNumber = "081267874199",
                             Role = "Admin",
-                            Salt = "W/hZuoCjEQhx78geCr+IyQ==",
+                            Salt = "5xfLcm2d7fk+x43joa7K8A==",
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserStatus = 0,
                             Username = "admin"
@@ -310,6 +373,36 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserSaldos");
+                });
+
+            modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Cart", b =>
+                {
+                    b.HasOne("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.User", "User")
+                        .WithOne("Cart")
+                        .HasForeignKey("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Cart", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.CartItem", b =>
+                {
+                    b.HasOne("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Cart", "Cart")
+                        .WithMany("CartItems")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Product", "Product")
+                        .WithMany("CartItems")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Order", b =>
@@ -386,6 +479,11 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Cart", b =>
+                {
+                    b.Navigation("CartItems");
+                });
+
             modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Category", b =>
                 {
                     b.Navigation("Products");
@@ -401,6 +499,8 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Migrations
 
             modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.Product", b =>
                 {
+                    b.Navigation("CartItems");
+
                     b.Navigation("OrderDetails");
 
                     b.Navigation("ProductSizes");
@@ -408,6 +508,9 @@ namespace EFENGSI_RAHMANTO_ZALUKHU.Migrations
 
             modelBuilder.Entity("EFENGSI_RAHMANTO_ZALUKHU.Models.DB.User", b =>
                 {
+                    b.Navigation("Cart")
+                        .IsRequired();
+
                     b.Navigation("Orders");
 
                     b.Navigation("UserSaldos");
